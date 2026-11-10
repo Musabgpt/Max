@@ -2,6 +2,11 @@ name: Android APK
 
 on:
   push:
+    paths-ignore:
+      - '.m1/**'
+      - 'docs/**'
+      - 'README.md'
+      - 'THIRD_PARTY_NOTICES.md'
   pull_request:
   workflow_dispatch:
 
