@@ -3,12 +3,14 @@
   "run_id": "max-android-20261110",
   "goal": "Build Arabic Android AI assistant APK from Musabgpt/Max",
   "status": "active",
-  "phase": "source delivery and emulator QA",
-  "last_verified_step": "Final APK verified; emulator UI, memory persistence, task creation and work/sleep tested",
-  "next_action": "Push initial source to empty main, finish emulator tests, publish APK release",
+  "phase": "APK release delivery",
+  "last_verified_step": "Source pushed main; 9 emulator checks passed, including screen-off background failure path",
+  "next_action": "Publish verified APK release and source archive; inspect corrected CI run",
   "active_operation": {
-    "id": "publish-source-main-v1",
-    "completion_signal": "origin/main SHA matches local source commit"
+    "id": "publish-apk-preview-v1",
+    "target": "Musabgpt/Max tag v1.0.0-preview.1",
+    "artifact_sha256": "d1c0e5ff1fbfc19d346485b28337d28c838714983b1a3f781ad0789f483a2353",
+    "completion_signal": "GitHub release asset available and checksum matches"
   },
   "changed_files": [],
   "checks": [
@@ -23,6 +25,14 @@
     {
       "command": "host JNI + Android API26 native smoke + UI baseline",
       "result": "Arabic+emoji generated on host; APK native load safe on Android; UI basic tests passed"
+    },
+    {
+      "command": "scripts/smoke-test.py + screen-off synthetic due task",
+      "result": "9/9 passed; controlled missing-model failure while Asleep; no crashes"
+    },
+    {
+      "command": "GitHub Actions42884966961",
+      "result": "failed setup-android default obsolete tools package; workflow corrected to platform-tools, awaiting rerun"
     }
   ],
   "decisions": [
@@ -35,9 +45,9 @@
   "unverified_claims": [],
   "git": {
     "root": "/workspace/Max",
-    "HEAD": "f58af9c0395c93a17def6f5aeb2a45ecde352272",
+    "HEAD": "0d2e0e0e3e7edcb67c3cd97d582da63ed8feddee",
     "branch": "feature/max-assistant",
     "dirty_paths": []
   },
-  "updated_at": "2026-11-10T19:24:27.104542+00:00"
+  "updated_at": "2026-11-10T19:27:31.090863+00:00"
 }

@@ -3,6 +3,8 @@
 
 Run with an already booted disposable emulator, never a personal phone:
   python3 scripts/smoke-test.py --serial emulator-5554 --apk app/build/outputs/apk/debug/app-debug.apk
+Then optionally check a due task with the screen off (requires baseline synthetic task):
+  python3 scripts/smoke-test.py --serial emulator-5554 --background-check
 No messages, purchases, API calls or model downloads are performed.
 """
 import argparse
@@ -187,6 +189,7 @@ class Smoke:
         nodes = self.dump("launch")
         if self.find("استكشاف التطبيق", nodes) is not None:
             self.tap("استكشاف التطبيق")
+        self.tap("مساعدي")
         self.assert_text("مساعدي")
         self.screenshot("home")
         self.record("install_and_arabic_home", "passed")
@@ -254,10 +257,18 @@ def main():
     parser.add_argument("--serial", default="emulator-5554")
     parser.add_argument("--apk")
     parser.add_argument("--output", default="docs/qa")
+    parser.add_argument("--background-check", action="store_true", help="Advance a synthetic debug task fixture and check screen-off failure handling")
     args = parser.parse_args()
     smoke = Smoke(args)
     try:
-        smoke.run()
+        if args.background_check:
+            previous = smoke.out / "smoke-results.json"
+            if previous.exists():
+                smoke.results = json.loads(previous.read_text())["checks"]
+            smoke.sequence = 100
+            smoke.background_failure_check()
+        else:
+            smoke.run()
     except Exception as error:
         smoke.record("smoke_execution", "failed", str(error))
         raise

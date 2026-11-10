@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-11-10T19:22:31.064262+00:00",
+  "tested_at": "2026-11-10T19:26:31.964156+00:00",
   "serial": "emulator-5554",
   "checks": [
     {
@@ -16,6 +16,36 @@
       "check": "memory_persists_across_process_restart",
       "status": "passed",
       "detail": "QA-memory-1794338487"
+    },
+    {
+      "check": "create_scheduled_task",
+      "status": "passed",
+      "detail": "QA-task-1794338565"
+    },
+    {
+      "check": "work_sleep_switch",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "missing_local_model_is_actionable",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "rotation_lifecycle",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "crash_buffer",
+      "status": "passed",
+      "detail": "No fatal exception or native fatal signal"
+    },
+    {
+      "check": "background_task_while_screen_off",
+      "status": "passed",
+      "detail": "Synthetic scheduled_at fixture advanced; recorded failure for missing model without crash. النموذج المجاني غير منزّل. افتح الإعدادات واضغط تنزيل النموذج (491 ميغابايت مرة واحدة)، أو اختر NVIDIA."
     }
   ]
 }

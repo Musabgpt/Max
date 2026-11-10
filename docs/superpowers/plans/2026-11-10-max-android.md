@@ -22,12 +22,18 @@ notification inbox, user-controlled background scheduler and local llama.cpp inf
 
 ## Tasks
 
-- [ ] Build tooling: pinned Gradle/AGP/SDK/llama, JNI cancellation and packaging.
-- [ ] Data and AI: SQLite models, encrypted secrets, verified model downloader,
+- [x] Build tooling: pinned Gradle/AGP/SDK/llama, JNI cancellation and packaging.
+- [x] Data and AI: SQLite models, encrypted secrets, verified model downloader,
       local/NVIDIA providers, deterministic command parsing and meaningful tests.
-- [ ] Tools: accessibility, reviewed browser/forms, notification replies, service/scheduling.
-- [ ] Product UI: onboarding, chat and voice, tasks, inbox, memory, settings and permissions.
-- [ ] Integrate, independent review, tests/lint, assemble and inspect APK, attempt emulator QA.
+- [x] Tools: accessibility, reviewed browser/forms, notification replies, service/scheduling.
+- [x] Product UI: onboarding, chat and voice, tasks, inbox, memory, settings and permissions.
+- [x] Integrate, independent review, tests/lint, assemble and inspect APK, attempt emulator QA.
+
+Observed validation: JVM 8/8, lint 0 errors/7 warnings, signed and aligned APK,
+actual host inference, Android native load and 9 emulator checks including screen-off
+background failure handling. Physical ARM64 execution and authenticated provider/app
+accounts remain untested. GitHub CI setup needed explicit platform-tools because the
+action's historical default requests removed package tools; corrected run is pending.
 
 ## Ownership and interfaces
 
