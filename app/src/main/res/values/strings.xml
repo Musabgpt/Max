@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MAX · مساعدك</string>
+    <string name="accessibility_description">يساعدك ماكس على قراءة نص الشاشة والضغط والكتابة أثناء الإجراءات التي تطلبها وتراجعها. لا يقرأ كلمات المرور ولا يفتح قفل الهاتف. يمكنك تعطيل الخدمة في أي وقت من إعدادات Android.</string>
+</resources>

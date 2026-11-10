@@ -1,0 +1,15 @@
+.gradle/
+local.properties
+**/build/
+**/.cxx/
+.idea/
+*.iml
+*.jks
+*.keystore
+*.gguf
+*.part
+.cmake/
+.DS_Store
+dist/
+.m1/*.lock
+__pycache__/

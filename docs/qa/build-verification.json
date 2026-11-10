@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-10",
+  "artifact": "app/build/outputs/apk/debug/app-debug.apk",
+  "bytes": 9537954,
+  "sha256": "d1c0e5ff1fbfc19d346485b28337d28c838714983b1a3f781ad0789f483a2353",
+  "minSdk": 26,
+  "targetSdk": 35,
+  "abis": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "tests": {
+    "tests": "8",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 7
+  },
+  "signature": "apksigner v2 verified by build_tooling; see build log",
+  "native_alignment": "zipalign -c -P 16 successful",
+  "provider_nvidia": "not tested without a user API key",
+  "model_runtime": "actual same-source host JNI generation passed; not a phone benchmark"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "run_id": "max-android-20261110",
+  "goal": "Build Arabic Android AI assistant APK from Musabgpt/Max",
+  "status": "active",
+  "phase": "integration verification",
+  "last_verified_step": "Initial APK assembled; JVM8/8 and lint0 errors observed",
+  "next_action": "Complete lifecycle/privacy fixes, rebuild, then run emulator smoke tests",
+  "active_operation": {
+    "id": "implement-v1",
+    "completion_signal": "All modules compile"
+  },
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "git ls-remote origin",
+      "result": "empty repository"
+    },
+    {
+      "command": "testDebugUnitTest lintDebug assembleDebug",
+      "result": "initial8tests passed;lint0errors8warnings;APK6.9MB"
+    }
+  ],
+  "decisions": [
+    "Native Java Android",
+    "Free local Qwen2.5 0.5B; optional NVIDIA",
+    "Official user-granted permissions only",
+    "Independent review fixed drafts, work defaults, target screen, browser form identity; scope native cancellation by request owner"
+  ],
+  "blockers": [],
+  "unverified_claims": [],
+  "git": {
+    "root": "/workspace/Max",
+    "HEAD": null,
+    "branch": "feature/max-assistant",
+    "dirty_paths": []
+  },
+  "updated_at": "2026-11-10T19:11:01.351328+00:00"
+}

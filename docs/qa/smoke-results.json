@@ -1,0 +1,21 @@
+{
+  "tested_at": "2026-11-10T19:22:31.064262+00:00",
+  "serial": "emulator-5554",
+  "checks": [
+    {
+      "check": "install_and_arabic_home",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "all_five_tabs",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "memory_persists_across_process_restart",
+      "status": "passed",
+      "detail": "QA-memory-1794338487"
+    }
+  ]
+}
