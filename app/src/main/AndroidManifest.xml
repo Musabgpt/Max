@@ -13,7 +13,11 @@
         <package android:name="com.google.android.gm" />
         <package android:name="com.microsoft.office.outlook" />
         <package android:name="com.android.chrome" />
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.facebook.lite" />
+        <intent><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent>
         <intent><action android:name="android.speech.RecognitionService" /></intent>
+        <intent><action android:name="android.speech.action.RECOGNIZE_SPEECH" /></intent>
         <intent><action android:name="android.intent.action.TTS_SERVICE" /></intent>
         <intent><action android:name="android.intent.action.SENDTO" /><data android:scheme="mailto" /></intent>
         <intent><action android:name="android.intent.action.VIEW" /><data android:scheme="https" /></intent>
@@ -26,6 +30,10 @@
             <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
         </activity>
         <activity android:name=".automation.BrowserActivity" android:exported="false" />
+        <activity android:name=".preview.HtmlPreviewActivity" android:exported="false" />
+        <service android:name=".automation.AutomationService" android:exported="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="User-reviewed on-device accessibility drafting for a visible selected app, with cancel and a separate final send/post confirmation; sessions stop within 120 seconds." />
+        </service>
         <service android:name=".automation.MaxAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:exported="true">
             <intent-filter><action android:name="android.accessibilityservice.AccessibilityService" /></intent-filter>
             <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_service" />

@@ -10,21 +10,20 @@ import android.os.Looper;
 import android.widget.Toast;
 import org.json.JSONObject;
 import java.util.function.Consumer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 /** An explicit visible review is required for every device action. LLM output is never executable. */
 public final class ActionExecutor {
     private ActionExecutor() { }
 
     public static void readScreen(Activity activity, Consumer<String> result) {
+        if (AutomationService.isRunning()) { result.accept("أكمل مهمة الهاتف الحالية أو ألغها قبل قراءة شاشة أخرى."); return; }
         String target = MaxAccessibilityService.targetPackage();
         if (!MaxAccessibilityService.isEnabled(activity)) { result.accept("فعّل خدمة إمكانية الوصول من الإعدادات أولًا."); return; }
         if (target == null) { result.accept("افتح التطبيق الذي تريد قراءة شاشته ثم ارجع إلى MAX."); return; }
         new AlertDialog.Builder(activity).setTitle("مراجعة قراءة الشاشة")
             .setMessage("سأعود إلى التطبيق السابق لقراءة النص المرئي ثم أعرضه هنا.\n\nالتطبيق: " + target + "\n\nلن تُقرأ حقول كلمات المرور، ولن يُرسل النص إلى نموذج خارجي تلقائيًا.")
             .setNegativeButton("إلغاء", null).setPositiveButton("قراءة الآن", (dialog, which) -> {
+                if (AutomationService.isRunning()) { result.accept("بدأت مهمة هاتف أخرى؛ أُلغيت قراءة الشاشة."); return; }
                 activity.moveTaskToBack(true);
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
                     String snapshot = MaxAccessibilityService.snapshot(target);
@@ -36,19 +35,15 @@ public final class ActionExecutor {
                 }, 800);
             }).show();
     }
-    private static final Map<String, String> APPS;
-    static {
-        Map<String, String> apps = new HashMap<>();
-        apps.put("whatsapp", "com.whatsapp"); apps.put("واتساب", "com.whatsapp");
-        apps.put("gmail", "com.google.android.gm"); apps.put("جيميل", "com.google.android.gm");
-        apps.put("chrome", "com.android.chrome"); apps.put("كروم", "com.android.chrome");
-        apps.put("outlook", "com.microsoft.office.outlook");
-        APPS = Collections.unmodifiableMap(apps);
-    }
-
     public static void preview(Activity activity, String action, String value) {
+        if (AutomationService.isRunning()) { toast(activity, "أكمل مهمة الهاتف الحالية أو ألغها قبل إجراء آخر."); return; }
         String clean = value == null ? "" : value.trim();
         if (clean.length() > 10000) { toast(activity, "النص طويل جدًا لهذا الإجراء."); return; }
+        if ("open_app".equals(action)) {
+            try { AutomationService.reviewAndStart(activity, DevicePlan.openApp(clean)); }
+            catch (IllegalArgumentException error) { toast(activity, error.getMessage()); }
+            return;
+        }
         String label;
         switch (action) {
             case "open_url": label = "فتح الموقع"; break;
@@ -69,6 +64,7 @@ public final class ActionExecutor {
                 .setMessage(label + (screen ? "\nالتطبيق المقصود: " + target : "") + "\n\n" + clean + "\n\nراجع المستلم والنص والمبلغ قبل الإرسال أو الشراء. يعتمد التحكم على الشاشة المفتوحة لحظة التنفيذ.")
                 .setNegativeButton("إلغاء", null)
                 .setPositiveButton("تنفيذ الآن", (dialog, which) -> {
+                    if (AutomationService.isRunning()) { toast(activity, "بدأت مهمة هاتف أخرى؛ أُلغي هذا الإجراء."); return; }
                     if (screen) {
                         activity.moveTaskToBack(true);
                         new Handler(Looper.getMainLooper()).postDelayed(() -> toast(activity, MaxAccessibilityService.perform(action, clean, target)), 700);
@@ -104,11 +100,7 @@ public final class ActionExecutor {
                     activity.startActivity(Intent.createChooser(email, "مراجعة البريد في تطبيقك")); return;
                 }
                 case "open_app": {
-                    String pkg = APPS.get(value.toLowerCase(java.util.Locale.ROOT));
-                    if (pkg == null && APPS.containsValue(value)) pkg = value;
-                    Intent launch = pkg == null ? null : activity.getPackageManager().getLaunchIntentForPackage(pkg);
-                    if (launch == null) { toast(activity, "التطبيق غير موجود أو غير مدعوم. التطبيقات: WhatsApp، Gmail، Chrome، Outlook."); return; }
-                    activity.startActivity(launch); return;
+                    activity.startActivity(AppRegistry.resolve(activity, value).launchIntent); return;
                 }
                 default: toast(activity, "الإجراء غير مدعوم.");
             }

@@ -13,33 +13,40 @@ import java.util.List;
 public final class AppStore extends SQLiteOpenHelper {
     private final SharedPreferences preferences;
     public AppStore(Context context) {
-        super(context.getApplicationContext(), "max-local.db", null, 1);
+        super(context.getApplicationContext(), "max-local.db", null, 2);
         preferences = context.getApplicationContext().getSharedPreferences("max-settings", Context.MODE_PRIVATE);
         setWriteAheadLoggingEnabled(true);
     }
     public SharedPreferences prefs() { return preferences; }
     @Override public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE messages(id INTEGER PRIMARY KEY AUTOINCREMENT,role TEXT NOT NULL,content TEXT NOT NULL,created_at INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE messages(id INTEGER PRIMARY KEY AUTOINCREMENT,role TEXT NOT NULL,content TEXT NOT NULL,created_at INTEGER NOT NULL,artifact_id TEXT NOT NULL DEFAULT '')");
         db.execSQL("CREATE TABLE memories(id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,content TEXT NOT NULL,created_at INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE tasks(id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,prompt TEXT NOT NULL,scheduled_at INTEGER NOT NULL,status TEXT NOT NULL DEFAULT 'pending',result TEXT NOT NULL DEFAULT '')");
         db.execSQL("CREATE INDEX tasks_due ON tasks(status,scheduled_at)");
         db.execSQL("CREATE TABLE inbox(id INTEGER PRIMARY KEY AUTOINCREMENT,package_name TEXT NOT NULL,title TEXT NOT NULL,text TEXT NOT NULL,notification_key TEXT NOT NULL DEFAULT '',received_at INTEGER NOT NULL)");
     }
-    @Override public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion) { }
+    @Override public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion) {
+        if(oldVersion < 2) db.execSQL("ALTER TABLE messages ADD COLUMN artifact_id TEXT NOT NULL DEFAULT ''");
+    }
     private static String clean(String value,int max) {
         if(value == null) return "";
         return value.length() > max ? value.substring(0,max) : value;
     }
     public long addMessage(String role,String content) {
+        return addMessage(role,content,"");
+    }
+    public long addMessage(String role,String content,String artifactId) {
         if(!"user".equals(role) && !"assistant".equals(role)) throw new IllegalArgumentException("Invalid role");
-        ContentValues v = new ContentValues();v.put("role",role);v.put("content",clean(content,30000));v.put("created_at",System.currentTimeMillis());
+        String artifact=artifactId==null?"":artifactId;
+        if(!artifact.isEmpty()&&!artifact.matches("[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}"))throw new IllegalArgumentException("Invalid artifact id");
+        ContentValues v = new ContentValues();v.put("role",role);v.put("content",clean(content,30000));v.put("created_at",System.currentTimeMillis());v.put("artifact_id",artifact);
         SQLiteDatabase db=getWritableDatabase();long id=db.insertOrThrow("messages",null,v);
         db.execSQL("DELETE FROM messages WHERE id NOT IN (SELECT id FROM messages ORDER BY id DESC LIMIT 500)");return id;
     }
     public List<Message> getMessages(int limit) {
         List<Message> out=new ArrayList<>();
-        try(Cursor c=getReadableDatabase().rawQuery("SELECT id,role,content,created_at FROM (SELECT * FROM messages ORDER BY id DESC LIMIT ?) ORDER BY id ASC",new String[]{String.valueOf(Math.max(1,Math.min(limit,500)))})) {
-            while(c.moveToNext())out.add(new Message(c.getLong(0),c.getString(1),c.getString(2),c.getLong(3)));
+        try(Cursor c=getReadableDatabase().rawQuery("SELECT id,role,content,created_at,artifact_id FROM (SELECT * FROM messages ORDER BY id DESC LIMIT ?) ORDER BY id ASC",new String[]{String.valueOf(Math.max(1,Math.min(limit,500)))})) {
+            while(c.moveToNext())out.add(new Message(c.getLong(0),c.getString(1),c.getString(2),c.getLong(3),c.getString(4)));
         }return out;
     }
     public void clearMessages(){getWritableDatabase().delete("messages",null,null);}
@@ -93,7 +100,7 @@ public final class AppStore extends SQLiteOpenHelper {
     }
     public void clearInbox(){getWritableDatabase().delete("inbox",null,null);}
     public void clearAllData(){SQLiteDatabase db=getWritableDatabase();db.beginTransaction();try{for(String table:new String[]{"messages","memories","tasks","inbox"})db.delete(table,null,null);db.setTransactionSuccessful();}finally{db.endTransaction();}}
-    public static final class Message{public final long id,createdAt;public final String role,content;public Message(long id,String role,String content,long createdAt){this.id=id;this.role=role;this.content=content;this.createdAt=createdAt;}}
+    public static final class Message{public final long id,createdAt;public final String role,content,artifactId;public Message(long id,String role,String content,long createdAt){this(id,role,content,createdAt,"");}public Message(long id,String role,String content,long createdAt,String artifactId){this.id=id;this.role=role;this.content=content;this.createdAt=createdAt;this.artifactId=artifactId==null?"":artifactId;}}
     public static final class Memory{public final long id,createdAt;public final String title,content;public Memory(long id,String title,String content,long createdAt){this.id=id;this.title=title;this.content=content;this.createdAt=createdAt;}}
     public static final class Task{public final long id,scheduledAt;public final String title,prompt,status,result;public Task(long id,String title,String prompt,long scheduledAt,String status,String result){this.id=id;this.title=title;this.prompt=prompt;this.scheduledAt=scheduledAt;this.status=status;this.result=result;}}
     public static final class InboxItem{public final long id,receivedAt;public final String packageName,title,text,notificationKey;public InboxItem(long id,String packageName,String title,String text,String notificationKey,long receivedAt){this.id=id;this.packageName=packageName;this.title=title;this.text=text;this.notificationKey=notificationKey;this.receivedAt=receivedAt;}}

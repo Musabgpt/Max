@@ -20,6 +20,8 @@ import com.maxassistant.app.ai.*;
 import com.maxassistant.app.data.*;
 import com.maxassistant.app.automation.*;
 import com.maxassistant.app.service.*;
+import com.maxassistant.app.preview.*;
+import com.maxassistant.app.voice.VoiceInputController;
 
 import java.text.DateFormat;
 import java.util.*;
@@ -35,13 +37,14 @@ public final class MainActivity extends Activity {
     private LinearLayout root,content,nav,chatList;
     private ScrollView page;
     private EditText input;
+    private Button voiceButton;
     private TextView status;
     private boolean busy,ttsReady;
     private volatile boolean downloading;
-    private String tab="home";
+    private String tab="home",renderedTab="",draft="";
     private ModelManager downloadManager;
     private AiRepository activeAi;
-    private SpeechRecognizer speech;
+    private VoiceInputController voiceInput;
     private TextToSpeech tts;
 
     @Override public void onCreate(Bundle state) {
@@ -50,18 +53,22 @@ public final class MainActivity extends Activity {
         getWindow().setNavigationBarColor(BG);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         store=new AppStore(this);
+        voiceInput=new VoiceInputController(this,new VoiceInputController.Host(){
+            public void onText(String value){draft=value;if(!"home".equals(tab)){tab="home";render();}if(input!=null){input.setText(value);input.setSelection(input.length());}}
+            public void onListening(boolean listening){if(voiceButton!=null)voiceButton.setText(listening?"إيقاف الصوت":"◉ صوت");}
+        });
         if(!store.prefs().contains("work_mode"))store.prefs().edit().putString("work_mode","work").apply();
         tts=new TextToSpeech(this,result->{ttsReady=result==TextToSpeech.SUCCESS;if(ttsReady)tts.setLanguage(Locale.forLanguageTag("ar"));});
-        if(state!=null)tab=state.getString("tab","home");
+        if(state!=null){tab=state.getString("tab","home");draft=state.getString("draft","");}
         render();
         if(!store.prefs().getBoolean("onboarding_done",false))main.post(this::onboarding);
     }
 
-    @Override protected void onSaveInstanceState(Bundle state){super.onSaveInstanceState(state);state.putString("tab",tab);}
-    @Override protected void onResume(){super.onResume();if(store!=null&&"settings".equals(tab))render();}
-    @Override protected void onStop(){super.onStop();if(speech!=null)speech.cancel();}
+    @Override protected void onSaveInstanceState(Bundle state){super.onSaveInstanceState(state);state.putString("tab",tab);state.putString("draft","home".equals(renderedTab)&&input!=null?input.getText().toString():draft);}
+    @Override protected void onResume(){super.onResume();if(store!=null)render();}
+    @Override protected void onStop(){super.onStop();if(voiceInput!=null)voiceInput.cancel();}
     @Override protected void onDestroy(){
-        if(speech!=null)speech.destroy();
+        if(voiceInput!=null)voiceInput.destroy();
         if(tts!=null){tts.stop();tts.shutdown();}
         if(downloadManager!=null)downloadManager.cancel();
         if(activeAi!=null)activeAi.cancel();worker.shutdownNow();main.removeCallbacksAndMessages(null);
@@ -85,6 +92,8 @@ public final class MainActivity extends Activity {
     private void safeSettings(Intent intent){try{startActivity(intent);}catch(RuntimeException e){toast("هذه الصفحة غير متاحة في إصدار الهاتف.");}}
 
     private void render(){
+        if("home".equals(renderedTab)&&input!=null)draft=input.getText().toString();
+        input=null;voiceButton=null;renderedTab=tab;
         root=column();root.setBackgroundColor(BG);root.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
         // API 35 edge-to-edge: keep all controls inside system-bar and keyboard insets.
         root.setOnApplyWindowInsetsListener((v,insets)->{
@@ -109,49 +118,70 @@ public final class MainActivity extends Activity {
         chatList=column();content.addView(chatList);
         List<AppStore.Message> messages=store.getMessages(60);
         if(messages.isEmpty()){
-            LinearLayout intro=card(chatList);intro.addView(text("بماذا أساعدك اليوم؟",20,TEXT));intro.addView(text("جرّب: «افتح واتساب»، «افتح موقع https://example.com»، أو اطلب مني كتابة مسودة رد.",14,MUTED));
+            LinearLayout intro=card(chatList);intro.addView(text("بماذا أساعدك اليوم؟",20,TEXT));intro.addView(text("جرّب: «افتح تطبيق فيسبوك وانشر مرحبا»، أو «اكتب كود آلة حاسبة HTML وشغله».",14,MUTED));
             intro.addView(button("✈ البحث عن رحلة",()->travel("flight")));intro.addView(button("⇄ البحث عن قطار",()->travel("train")));intro.addView(button("+ جدولة مهمة",this::newTask));
-        }else for(AppStore.Message m:messages)bubble(m.role,m.content);
+        }else for(AppStore.Message m:messages)bubble(m);
+        if(AutomationService.isRunning())chatList.addView(button("إلغاء مهمة الهاتف الجارية",()->{AutomationService.cancel(this);render();}));
         if(busy)chatList.addView(text("ماكس يفكّر…",14,MINT));
-        LinearLayout compose=column();compose.setPadding(0,dp(8),0,0);input=field("اكتب طلبك هنا…",true);input.setMaxLines(5);compose.addView(input);
-        LinearLayout controls=row();Button send=primary(busy?"جارٍ التفكير…":"إرسال ↑",this::send);send.setEnabled(!busy);controls.addView(send,new LinearLayout.LayoutParams(0,dp(48),1));Button mic=button("◉ صوت",this::listen);LinearLayout.LayoutParams mp=new LinearLayout.LayoutParams(dp(95),dp(48));mp.setMarginStart(dp(8));controls.addView(mic,mp);compose.addView(controls);
+        LinearLayout compose=column();compose.setPadding(0,dp(8),0,0);input=field("اكتب طلبك هنا…",true);input.setId(R.id.assistant_input);input.setText(draft);input.setMaxLines(5);compose.addView(input);
+        LinearLayout controls=row();Button send=primary(busy?"جارٍ التفكير…":"إرسال ↑",this::send);send.setId(R.id.assistant_send);send.setEnabled(!busy);controls.addView(send,new LinearLayout.LayoutParams(0,dp(48),1));voiceButton=button("◉ صوت",this::listen);voiceButton.setId(R.id.assistant_voice);LinearLayout.LayoutParams mp=new LinearLayout.LayoutParams(dp(95),dp(48));mp.setMarginStart(dp(8));controls.addView(voiceButton,mp);compose.addView(controls);
         if(busy)compose.addView(button("إيقاف التوليد",()->{if(activeAi!=null)activeAi.cancel();toast("تم طلب الإيقاف.");}));content.addView(compose);
         main.post(()->{if(page!=null)page.fullScroll(View.FOCUS_DOWN);});
     }
 
-    private void bubble(String role,String message){LinearLayout c=card(chatList);c.setBackground(shape("user".equals(role)?0xff25374a:CARD,16));c.addView(text("user".equals(role)?"أنت":"✦ ماكس",12,"user".equals(role)?BLUE:MINT));TextView body=text(message,16,TEXT);body.setTextIsSelectable(true);c.addView(body);}
+    private void bubble(AppStore.Message message){
+        boolean user="user".equals(message.role);LinearLayout c=card(chatList);c.setBackground(shape(user?0xff25374a:CARD,16));c.addView(text(user?"أنت":"✦ ماكس",12,user?BLUE:MINT));TextView body=text(user?message.content:ReplyText.forDisplay(message.content),16,TEXT);body.setTextIsSelectable(true);c.addView(body);
+        if(!user&&!message.artifactId.isEmpty())c.addView(button("فتح المعاينة ▷",()->HtmlPreviewActivity.open(this,message.artifactId)));
+        else if(!user&&HtmlDocuments.looksLikeHtml(message.content))c.addView(button("تشغيل HTML في المعاينة ▷",()->saveAndOpenHtml(message.content)));
+    }
     private void addQuick(LinearLayout parent,String label,Runnable run){Button b=button(label,run);b.setTextSize(12);LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(0,dp(46),1);p.setMargins(dp(3),0,dp(3),0);parent.addView(b,p);}
     private String providerStatus(){if("nvidia".equals(store.prefs().getString("provider","local")))return "◉ NVIDIA · "+(NvidiaClient.AUTO_MODEL.equals(NvidiaClient.normalizeChoice(store.prefs().getString("nvidia_model",NvidiaClient.AUTO_MODEL)))?"اختيار تلقائي":"نموذج مخصص");return new ModelManager(this).isReady()?"● نموذج محلي · جاهز بدون إنترنت":"◌ النموذج المحلي يحتاج تنزيلًا أول مرة";}
 
     private void send(){
         if(busy)return;String message=input.getText().toString().trim();if(message.isEmpty())return;
         if(message.length()>6000){toast("الطلب طويل. اختصره إلى 6000 حرف.");return;}
+        TaskIntent.Type intent=TaskIntent.classify(message);
+        if(intent==TaskIntent.Type.RUN_LAST_HTML){acceptMessage(message);openLastHtml();return;}
+        if(intent==TaskIntent.Type.CALCULATOR_HTML){acceptMessage(message);finishHtml(HtmlDocuments.calculator(),TaskIntent.wantsHtmlRun(message));return;}
         CommandRouter.Command command=CommandRouter.parse(message);
-        if(command!=null){store.addMessage("user",message);store.addMessage("assistant","سأعرض الإجراء للمراجعة: "+command.summary+". التنفيذ يعتمد على الصلاحيات وحالة الهاتف.");render();ActionExecutor.preview(this,command.action,command.value);return;}
-        if("local".equals(store.prefs().getString("provider","local"))&&!new ModelManager(this).isReady()){
-            new AlertDialog.Builder(this).setTitle("النموذج غير محمّل بعد").setMessage("نزّل النموذج المجاني مرة واحدة (~491 ميغابايت)، أو أضف مفتاح NVIDIA في الإعدادات.").setPositiveButton("تنزيل النموذج",(d,w)->downloadModel()).setNegativeButton("الإعدادات",(d,w)->{tab="settings";render();}).show();return;
-        }
-        store.addMessage("user",message);busy=true;activeAi=new AiRepository(getApplicationContext());final AiRepository request=activeAi;render();
+        if(command!=null&&!"open_app".equals(command.action)){acceptMessage(message);store.addMessage("assistant","سأعرض الإجراء للمراجعة: "+command.summary+".");render();ActionExecutor.preview(this,command.action,command.value);return;}
+        DevicePlan plan=DeviceTaskParser.parse(message);
+        if(plan!=null){acceptMessage(message);store.addMessage("assistant","خطة الهاتف جاهزة للمراجعة. سأعرض التطبيق والنص، وأطلب تأكيدًا منفصلًا قبل النشر أو الإرسال.");render();AutomationService.reviewAndStart(this,plan);return;}
+        if(command!=null){acceptMessage(message);render();ActionExecutor.preview(this,command.action,command.value);return;}
+        if(!modelReady())return;
+        acceptMessage(message);busy=true;activeAi=new AiRepository(getApplicationContext());final AiRepository request=activeAi;render();
         worker.execute(()->{
-            try{String answer=request.reply(message);store.addMessage("assistant",answer);main.post(()->{if(!isDestroyed()){busy=false;activeAi=null;render();if(store.prefs().getBoolean("speak_replies",false))speak(answer);}});}
+            try{
+                if(intent==TaskIntent.Type.DEVICE_REQUEST){DevicePlan generated=request.planDeviceTask(message);main.post(()->{if(!isDestroyed()){busy=false;activeAi=null;store.addMessage("assistant","أعددت خطة للمراجعة. لم يُنفّذ أي نشر أو إرسال بعد.");render();AutomationService.reviewAndStart(this,generated);}});}
+                else if(intent==TaskIntent.Type.GENERATE_HTML){String html=request.generateHtml(message);main.post(()->{if(!isDestroyed()){busy=false;activeAi=null;finishHtml(html,true);}});}
+                else{String answer=ReplyText.require(request.reply(message));String artifact="";if(HtmlDocuments.looksLikeHtml(answer))try{artifact=new HtmlArtifactStore(this).save(answer);}catch(Exception ignored){}store.addMessage("assistant",answer,artifact);main.post(()->{if(!isDestroyed()){busy=false;activeAi=null;render();if(store.prefs().getBoolean("speak_replies",false))speak(answer);}});}
+            }
             catch(Exception ex){main.post(()->{if(!isDestroyed()){busy=false;activeAi=null;store.addMessage("assistant","تعذّر إكمال الطلب: "+error(ex));render();}});}
         });
+    }
+    private void acceptMessage(String message){draft="";if(input!=null)input.setText("");store.addMessage("user",message);}
+    private boolean modelReady(){
+        if(!"local".equals(store.prefs().getString("provider","local"))||new ModelManager(this).isReady())return true;
+        new AlertDialog.Builder(this).setTitle("النموذج غير محمّل بعد").setMessage("أوامر التطبيقات والحاسبة تعمل دون نموذج. للمحادثة أو توليد كود آخر نزّل النموذج المجاني (~491 ميغابايت)، أو أضف مفتاح NVIDIA.").setPositiveButton("تنزيل النموذج",(d,w)->downloadModel()).setNegativeButton("الإعدادات",(d,w)->{tab="settings";render();}).show();return false;
+    }
+    private void finishHtml(String html,boolean run){
+        try{String id=new HtmlArtifactStore(this).save(html);store.addMessage("assistant","جهزت صفحة HTML وحفظتها على الهاتف. افتح المعاينة لتشغيلها أو عرض الكود ونسخه.",id);render();if(run)HtmlPreviewActivity.open(this,id);}
+        catch(Exception error){store.addMessage("assistant","تعذّر حفظ المعاينة: "+error(error)+"\n\n```html\n"+html+"\n```");render();}
+    }
+    private void saveAndOpenHtml(String html){try{String id=new HtmlArtifactStore(this).save(html);HtmlPreviewActivity.open(this,id);}catch(Exception ex){toast(error(ex));}}
+    private void openLastHtml(){
+        List<AppStore.Message> messages=store.getMessages(60);
+        for(int i=messages.size()-1;i>=0;i--){AppStore.Message m=messages.get(i);if(!"assistant".equals(m.role))continue;if(!m.artifactId.isEmpty()){render();HtmlPreviewActivity.open(this,m.artifactId);return;}if(HtmlDocuments.looksLikeHtml(m.content)){render();saveAndOpenHtml(m.content);return;}}
+        store.addMessage("assistant","لم أجد صفحة HTML سابقة. جرّب: اكتب كود آلة حاسبة HTML وشغله.");render();
     }
     private String error(Exception e){String s=e.getMessage();return s==null?"خطأ غير متوقع. راجع الإعدادات وحاول مجددًا.":s;}
     private void speak(String value){if(ttsReady)tts.speak(value,TextToSpeech.QUEUE_FLUSH,null,"max-reply");else toast("محرك الصوت غير جاهز. ثبّت صوتًا عربيًا من إعدادات الهاتف.");}
 
     private void listen(){
-        if(checkSelfPermission(Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED){requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},11);return;}
-        if(!SpeechRecognizer.isRecognitionAvailable(this)){toast("لا توجد خدمة تعرّف على الكلام. ثبّت أو فعّل خدمة صوتية في الهاتف.");return;}
-        if(speech!=null)speech.destroy();speech=SpeechRecognizer.createSpeechRecognizer(this);
-        speech.setRecognitionListener(new RecognitionListener(){
-            public void onReadyForSpeech(Bundle p){toast("أنا أستمع…");}public void onBeginningOfSpeech(){}public void onRmsChanged(float v){}public void onBufferReceived(byte[] b){}public void onEndOfSpeech(){}public void onPartialResults(Bundle b){}public void onEvent(int t,Bundle b){}
-            public void onError(int code){toast(code==SpeechRecognizer.ERROR_NO_MATCH?"لم ألتقط الكلام. حاول مجددًا.":"تعذّر التعرف على الصوت ("+code+"). قد تتطلب خدمة الهاتف الإنترنت.");}
-            public void onResults(Bundle data){ArrayList<String> r=data.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);if(r!=null&&!r.isEmpty()){if(!"home".equals(tab)){tab="home";render();}input.setText(r.get(0));input.setSelection(input.length());}}
-        });
-        Intent i=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);i.putExtra(RecognizerIntent.EXTRA_LANGUAGE,"ar");i.putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE,true);speech.startListening(i);
+        voiceInput.startOrStop();
     }
-    @Override public void onRequestPermissionsResult(int request,String[] permissions,int[] grants){super.onRequestPermissionsResult(request,permissions,grants);if(request==11&&grants.length>0&&grants[0]==PackageManager.PERMISSION_GRANTED)listen();else if(request==11)toast("يمكنك استخدام الكتابة دون الميكروفون.");}
+    @Override public void onRequestPermissionsResult(int request,String[] permissions,int[] grants){super.onRequestPermissionsResult(request,permissions,grants);if(voiceInput!=null)voiceInput.onPermissionResult(request,grants);}
+    @Override protected void onActivityResult(int request,int result,Intent data){super.onActivityResult(request,result,data);if(voiceInput!=null)voiceInput.onActivityResult(request,result,data);}
 
     private void tools(){String[] labels={"فتح موقع","فتح واتساب","فتح Gmail","قراءة النص الظاهر على الشاشة","كتابة في الحقل المحدد","الضغط على نص","رجوع","تمرير لأسفل"};new AlertDialog.Builder(this).setTitle("أدوات الهاتف").setItems(labels,(d,n)->{
         switch(n){case 0:askUrl();break;case 1:ActionExecutor.preview(this,"open_app","com.whatsapp");break;case 2:ActionExecutor.preview(this,"open_app","com.google.android.gm");break;case 3:ActionExecutor.readScreen(this,snapshot->{if(!isDestroyed())new AlertDialog.Builder(this).setTitle("النص المتاح").setMessage(snapshot).setPositiveButton("إغلاق",null).show();});break;case 4:askText("النص المراد كتابته","fill");break;case 5:askText("النص المراد الضغط عليه","click");break;case 6:ActionExecutor.preview(this,"back","");break;default:ActionExecutor.preview(this,"scroll","");}
@@ -188,8 +218,8 @@ public final class MainActivity extends Activity {
         model.addView(button("مجاني على الهاتف · Qwen 0.5B",()->{store.prefs().edit().putString("provider","local").apply();render();}));model.addView(text("تنزيل واحد ~491 MB. يعمل دون إنترنت بعده، وقدرته اللغوية والاستدلالية محدودة. يُنصح بذاكرة RAM لا تقل عن 3 GB.",12,MUTED));model.addView(button(downloading?"عرض تقدم التنزيل":new ModelManager(this).isReady()?"✓ النموذج محمّل":"تنزيل النموذج المجاني",this::downloadModel));model.addView(button("إعداد NVIDIA",this::nvidiaSetup));
         LinearLayout permissions=card(content);permissions.addView(text("صلاحيات الهاتف",19,TEXT));permissions.addView(text("Android يطلب موافقتك لكل صلاحية. لا يمكن منحها تلقائيًا أو التحكم بشاشة مقفلة.",13,MUTED));permissions.addView(button((MaxAccessibilityService.isEnabled(this)?"✓ ":"")+"خدمة الوصول · التحكم بالشاشة",this::accessibilityConsent));permissions.addView(button((InboxService.enabled(this)?"✓ ":"")+"قراءة الإشعارات والرد عليها",()->notificationConsent()));if(Build.VERSION.SDK_INT>=33)permissions.addView(button("السماح بإشعارات ماكس",()->requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},12)));permissions.addView(button("السماح بالميكروفون",()->requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},13)));
         LinearLayout background=card(content);background.addView(text("العمل والنوم",19,TEXT));background.addView(text("العمل بالخلفية يستخدم إشعارًا ظاهرًا. يمكن تجهيز نصوص والتذكير والشاشة مطفأة؛ تنفيذ إجراءات التطبيقات ينتظر فتح القفل. إيقاف التطبيق قسريًا أو قيود البطارية قد يوقف المهام.",13,MUTED));boolean enabled=store.prefs().getBoolean("bg_enabled",false);background.addView(button(enabled?"إيقاف العمل بالخلفية":"تشغيل العمل بالخلفية",()->{if(enabled){store.prefs().edit().putBoolean("bg_enabled",false).apply();TaskService.stop(this);}else{store.prefs().edit().putBoolean("bg_enabled",true).apply();TaskService.start(this);}render();}));background.addView(button("تبديل وضع النوم / العمل",this::toggleMode));background.addView(button("إعدادات استهلاك البطارية",()->safeSettings(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:"+getPackageName())))));
-        LinearLayout voice=card(content);voice.addView(text("الصوت",19,TEXT));Switch speak=new Switch(this);speak.setText("قراءة الإجابات بصوت مسموع");speak.setTextColor(TEXT);speak.setChecked(store.prefs().getBoolean("speak_replies",false));speak.setOnCheckedChangeListener((b,value)->store.prefs().edit().putBoolean("speak_replies",value).apply());voice.addView(speak);voice.addView(text("التسجيل يبدأ بالضغط على زر الصوت فقط. توفر العربية والعمل دون إنترنت يعتمدان على خدمة الصوت في هاتفك.",12,MUTED));
-        LinearLayout privacy=card(content);privacy.addView(text("بياناتك",19,TEXT));privacy.addView(text("لا نسخ احتياطي لبيانات التطبيق. المحادثات والذاكرة والوارد محليًا. NVIDIA يستقبل طلب المحادثة والذكريات عند اختياره، ولا يُرسل سجل الإشعارات تلقائيًا.",13,MUTED));privacy.addView(button("مسح المحادثة",()->new AlertDialog.Builder(this).setTitle("مسح المحادثة؟").setPositiveButton("مسح",(d,w)->{store.clearMessages();toast("تم مسح المحادثة.");}).setNegativeButton("إلغاء",null).show()));privacy.addView(button("حذف مفتاح NVIDIA",()->new AlertDialog.Builder(this).setTitle("حذف المفتاح المحفوظ؟").setPositiveButton("حذف",(d,w)->{new SecureSecrets(this).clearNvidiaKey();store.prefs().edit().putString("provider","local").apply();render();}).setNegativeButton("إلغاء",null).show()));privacy.addView(text("MAX · الإصدار 1.0.1\nمساعد قابل للتطوير؛ خدمات الحجوزات والبريد تتطلب حساباتك لدى مزوديها.",12,MUTED));
+        LinearLayout voice=card(content);voice.addView(text("الصوت",19,TEXT));Switch speak=new Switch(this);speak.setText("قراءة الإجابات بصوت مسموع");speak.setTextColor(TEXT);speak.setChecked(store.prefs().getBoolean("speak_replies",false));speak.setOnCheckedChangeListener((b,value)->store.prefs().edit().putBoolean("speak_replies",value).apply());voice.addView(speak);voice.addView(text("الصوت يبدأ بالضغط فقط ويضع الكلام في مسودة للمراجعة. عند تعذّر العربية تفتح خدمة الصوت البديلة؛ قد تحتاج الإنترنت أو تنزيل حزمة عربية.",12,MUTED));voice.addView(button("إعدادات خدمة الصوت والعربية",()->voiceInput.openSettings()));
+        LinearLayout privacy=card(content);privacy.addView(text("بياناتك",19,TEXT));privacy.addView(text("لا نسخ احتياطي لبيانات التطبيق. المحادثات والذاكرة والوارد محليًا. NVIDIA يستقبل طلب المحادثة والذكريات عند اختياره، ولا يُرسل سجل الإشعارات تلقائيًا.",13,MUTED));privacy.addView(button("مسح المحادثة",()->new AlertDialog.Builder(this).setTitle("مسح المحادثة؟").setPositiveButton("مسح",(d,w)->{store.clearMessages();try{new HtmlArtifactStore(this).clear();toast("تم مسح المحادثة ومعاينات HTML.");}catch(Exception ex){toast(error(ex));}}).setNegativeButton("إلغاء",null).show()));privacy.addView(button("حذف مفتاح NVIDIA",()->new AlertDialog.Builder(this).setTitle("حذف المفتاح المحفوظ؟").setPositiveButton("حذف",(d,w)->{new SecureSecrets(this).clearNvidiaKey();store.prefs().edit().putString("provider","local").apply();render();}).setNegativeButton("إلغاء",null).show()));privacy.addView(text("MAX · الإصدار 1.1.0\nمساعد قابل للتطوير؛ خدمات الحجوزات والبريد تتطلب حساباتك لدى مزوديها.",12,MUTED));
     }
 
     private void accessibilityConsent(){new AlertDialog.Builder(this).setTitle("السماح بالتحكم بالشاشة").setMessage("تسمح خدمة الوصول لماكس بقراءة نص الشاشة والضغط والكتابة أثناء الإجراءات التي تطلبها وتراجعها. لا يقرأ الحقول السرية ولا يفتح قفل الجهاز. يمكنك تعطيلها في أي وقت من إعدادات Android. بعض الهواتف تتطلب السماح بالإعدادات المقيّدة من معلومات التطبيق أولًا.").setPositiveButton("فتح إعدادات الوصول",(d,w)->safeSettings(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))).setNegativeButton("إلغاء",null).show();}

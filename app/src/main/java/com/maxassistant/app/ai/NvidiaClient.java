@@ -50,6 +50,9 @@ public final class NvidiaClient {
     public NvidiaClient(String key,Transport transport){this.key=key==null?"":key.trim();this.transport=transport;}
 
     public Result complete(String requested,String lastModel,JSONArray messages) throws IOException {
+        return complete(requested,lastModel,messages,1024);
+    }
+    public Result complete(String requested,String lastModel,JSONArray messages,int maxTokens) throws IOException {
         checkCancelled();validateKey();
         String choice=normalizeChoice(requested);
         if(!AUTO_MODEL.equals(choice)&&!validId(choice))throw new IOException("معرّف نموذج NVIDIA غير صالح. اختر auto للاختيار التلقائي.");
@@ -63,12 +66,18 @@ public final class NvidiaClient {
         }
         boolean switched=requested!=null&&LEGACY_MODEL.equals(requested.trim());
         Set<String> attempted=new HashSet<>();
-        // Only an explicit model-unavailable response permits one inference retry.
-        // Authentication, quota, timeout and other errors never repeat the prompt.
+        int budget=Math.max(32,Math.min(8192,maxTokens));
+        // At most two inference requests: withdrawn model OR an explicitly length-
+        // truncated empty answer. Authentication, quota and network errors do not replay.
         for(int attempt=0;attempt<2;attempt++){
             checkCancelled();
-            Response response=send("POST",CHAT_URL,key,payload(model,messages));
-            if(response.status==200)return new Result(answer(response.body),model,switched);
+            Response response=send("POST",CHAT_URL,key,payload(model,messages,budget));
+            if(response.status==200){
+                String text=answer(response.body);
+                if(ReplyText.isUsable(text))return new Result(ReplyText.require(text),model,switched);
+                if(attempt==0&&lengthTruncated(response.body)&&budget<8192){budget=Math.min(8192,Math.max(4096,budget*2));continue;}
+                throw new IOException("لم يرجع النموذج جوابًا نهائيًا. اختصر الطلب أو اختر نموذجًا آخر.");
+            }
             if((response.status!=404&&response.status!=410)||attempt==1)throw statusError(response.status);
             attempted.add(model);
             if(available==null){
@@ -123,10 +132,10 @@ public final class NvidiaClient {
             return ids;
         }catch(JSONException e){throw new IOException("قائمة نماذج NVIDIA غير صالحة.",e);}
     }
-    private static String payload(String model,JSONArray messages) throws IOException {
+    private static String payload(String model,JSONArray messages,int budget) throws IOException {
         try{
             JSONObject request=new JSONObject().put("model",model).put("messages",messages)
-                .put("max_tokens",model.startsWith("openai/gpt-oss-")?4096:1024)
+                .put("max_tokens",model.startsWith("openai/gpt-oss-")?Math.max(4096,budget):budget)
                 .put("temperature",0.4).put("stream",false);
             if(model.startsWith("nvidia/nemotron-3.5-")||model.startsWith("nvidia/nemotron-nano-3-"))
                 request.put("chat_template_kwargs",new JSONObject().put("enable_thinking",false));
@@ -137,9 +146,22 @@ public final class NvidiaClient {
     private static String answer(String body) throws IOException {
         try{
             Object content=new JSONObject(body).getJSONArray("choices").getJSONObject(0).getJSONObject("message").opt("content");
-            if(!(content instanceof String)||((String)content).trim().isEmpty())throw new IOException("لم يرجع النموذج جوابًا نهائيًا. اختصر الطلب أو اختر نموذجًا آخر.");
-            return ((String)content).trim();
+            if(content instanceof String)return ReplyText.clean((String)content);
+            if(content instanceof JSONArray){
+                StringBuilder finalText=new StringBuilder();JSONArray parts=(JSONArray)content;
+                for(int i=0;i<parts.length();i++){
+                    JSONObject part=parts.optJSONObject(i);if(part==null)continue;
+                    String type=part.optString("type","");Object text=part.opt("text");
+                    if(("text".equals(type)||"output_text".equals(type))&&text instanceof String)finalText.append(text);
+                }
+                return ReplyText.clean(finalText.toString());
+            }
+            return "";
         }catch(JSONException e){throw new IOException("رد NVIDIA غير صالح. حاول مجددًا لاحقًا.",e);}
+    }
+    private static boolean lengthTruncated(String body){
+        try{return "length".equals(new JSONObject(body).getJSONArray("choices").getJSONObject(0).optString("finish_reason",""));}
+        catch(JSONException invalid){return false;}
     }
     private Response send(String method,String url,String apiKey,String body) throws IOException {
         checkCancelled();

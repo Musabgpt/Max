@@ -100,4 +100,21 @@ public final class NvidiaClientTest {
         Fake f=new Fake();assertNotNull(fails(new NvidiaClient("nvapi-\nPRIVATE",f),"auto"));assertTrue(f.calls.isEmpty());
         Fake badId=new Fake();assertNotNull(fails(new NvidiaClient(KEY,badId),"https://attacker.test"));assertTrue(badId.calls.isEmpty());
     }
+    @Test public void literalNullIsAControlledMissingAnswer() {
+        Fake f=new Fake().respond(200,answer("null"));
+        IOException error=fails(new NvidiaClient(KEY,f),"example/custom-instruct");
+        assertTrue(error.getMessage().contains("جواب"));assertEquals(1,f.calls.size());
+    }
+    @Test public void lengthTruncatedEmptyAnswerGetsOneLargerBudgetRetry() throws Exception {
+        Fake f=new Fake().respond(200,"{\"choices\":[{\"finish_reason\":\"length\",\"message\":{\"content\":null,\"reasoning_content\":\"PRIVATE\"}}]}").respond(200,answer("كود مكتمل"));
+        NvidiaClient.Result result=new NvidiaClient(KEY,f).complete("example/custom-instruct","",messages());
+        assertEquals("كود مكتمل",result.text);assertEquals(2,f.calls.size());
+        JSONObject before=new JSONObject(f.calls.get(0).body),after=new JSONObject(f.calls.get(1).body);
+        assertTrue(after.getInt("max_tokens")>before.getInt("max_tokens"));assertTrue(after.getInt("max_tokens")<=8192);
+        assertEquals(before.getJSONArray("messages").toString(),after.getJSONArray("messages").toString());
+    }
+    @Test public void contentPartsExtractOnlyFinalText() throws Exception {
+        Fake f=new Fake().respond(200,"{\"choices\":[{\"message\":{\"content\":[{\"type\":\"reasoning\",\"text\":\"PRIVATE\"},{\"type\":\"text\",\"text\":\"أهلًا\"}]}}]}");
+        assertEquals("أهلًا",new NvidiaClient(KEY,f).complete("example/custom-instruct","",messages()).text);
+    }
 }

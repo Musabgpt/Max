@@ -1,0 +1,5 @@
+<resources>
+    <item name="assistant_input" type="id" />
+    <item name="assistant_send" type="id" />
+    <item name="assistant_voice" type="id" />
+</resources>

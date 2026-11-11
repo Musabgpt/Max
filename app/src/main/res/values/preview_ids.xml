@@ -1,0 +1,8 @@
+<resources>
+    <item name="html_preview_webview" type="id" />
+    <item name="html_preview_code" type="id" />
+    <item name="html_preview_status" type="id" />
+    <item name="html_preview_show" type="id" />
+    <item name="html_preview_show_code" type="id" />
+    <item name="html_preview_copy" type="id" />
+</resources>
