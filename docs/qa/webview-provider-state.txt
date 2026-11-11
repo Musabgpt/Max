@@ -1,0 +1,10 @@
+Current WebView Update Service state
+  Fallback logic enabled: true
+  Current WebView package is null
+  Minimum WebView version code: -1
+  Number of relros started: 0
+  Number of relros finished: 0
+  WebView package dirty: false
+  Any WebView package installed: false
+  Preferred WebView package: none
+  WebView packages:

@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-11-10T19:26:31.964156+00:00",
+  "tested_at": "2026-11-11T00:12:03.203670+00:00",
   "serial": "emulator-5554",
   "checks": [
     {
@@ -46,6 +46,26 @@
       "check": "background_task_while_screen_off",
       "status": "passed",
       "detail": "Synthetic scheduled_at fixture advanced; recorded failure for missing model without crash. النموذج المجاني غير منزّل. افتح الإعدادات واضغط تنزيل النموذج (491 ميغابايت مرة واحدة)، أو اختر NVIDIA."
+    },
+    {
+      "check": "reviewed_https_browser_launch",
+      "status": "passed",
+      "detail": "Missing-provider crash reproduced before fix; final APK shows actionable fallback and disables form fill. See browser-before-fix-crash.txt."
+    },
+    {
+      "check": "missing_external_browser_is_controlled",
+      "status": "passed",
+      "detail": "Unavailable-browser action leaves fallback usable; AOSP WebView Shell fixture temporarily disabled and restored."
+    },
+    {
+      "check": "browser_fallback_rotation_back",
+      "status": "passed",
+      "detail": "URL preserved on rotation; Back returns to MAX."
+    },
+    {
+      "check": "browser_regression_crash_buffer",
+      "status": "passed",
+      "detail": "Crash buffer empty after final APK affected-path tests."
     }
   ]
 }

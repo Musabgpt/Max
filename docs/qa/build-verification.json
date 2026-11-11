@@ -23,7 +23,23 @@
   "native_alignment": "Final APK zipalign -c -P16 passed",
   "provider_nvidia": "not tested without a user API key",
   "model_runtime": "actual same-source host JNI generation passed; not a phone benchmark",
-  "browser_regression": "Final browser fallback plus insets correction compiled; focused current-APK regression running",
+  "browser_regression": "PASS: final installed APK fallback, absent external browser, rotation/URL restoration, Back, empty crash buffer",
   "unchanged_native_libraries_vs_prior_apk": 4,
-  "github_ci": "Source93e340f passed run42885463647; browser-fix code awaiting fresh CI after push"
+  "github_ci": {
+    "run": 42928447171,
+    "commit": "dee44ee6575b257b5182844c166531c1f7878fa8",
+    "url": "https://github.com/Musabgpt/Max/actions/runs/42928447171",
+    "conclusion": "success",
+    "app_tree": "c23c18d1f4914e1e62cff13e81f629582d6c047c",
+    "release_app_source_matches": true
+  },
+  "emulator": {
+    "api": 26,
+    "abi": "x86_64",
+    "accepted_checks": 13,
+    "all_passed": true,
+    "baseline": "9 prior MainActivity/background checks reused; unchanged code",
+    "final_browser_checks": "4 targeted checks on installed final APK46fd8641…"
+  },
+  "verified_at": "2026-11-11T00:14:09.586359+00:00"
 }

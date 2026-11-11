@@ -200,14 +200,23 @@ class Smoke:
         # Keep original failure evidence; this file represents current regression results.
         self.results = [r for r in self.results if r["check"] != "reviewed_https_browser_launch"]
         self.record("reviewed_https_browser_launch", "passed", "Missing-provider crash reproduced before fix; final APK shows actionable fallback and disables form fill. See browser-before-fix-crash.txt.")
+        self.browser_fallback_tail()
+
+    def browser_fallback_tail(self):
+        if not self.args.serial.startswith("emulator-"):
+            raise RuntimeError("Browser fixture checks require a disposable emulator")
+        self.assert_text("Android System WebView")
         # The minimal AOSP image includes a WebView Shell URL handler, even without
         # a WebView provider. It crashes independently; it is not a usable browser.
         # Temporarily disable this test fixture to exercise ActivityNotFoundException.
-        shell_package = "com.android.webview.shell"
+        shell_package = "org.chromium.webview_shell"
         shell_enabled = ("package:" + shell_package) in self.adb("shell", "pm", "list", "packages", "-e", shell_package)
         try:
             if shell_enabled:
                 self.adb("shell", "pm", "disable-user", "--user", "0", shell_package)
+            handler = self.adb("shell", "cmd", "package", "resolve-activity", "--brief", "-a", "android.intent.action.VIEW", "-d", "https://example.com").strip()
+            if handler and "No activity found" not in handler:
+                raise AssertionError("Unexpected external browser in unavailable-browser fixture: " + handler)
             self.tap("خارج التطبيق")
             self.assert_text("Android System WebView")
         finally:

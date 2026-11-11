@@ -1,0 +1,37 @@
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: FATAL EXCEPTION: main
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: Process: com.maxassistant.app, PID: 4423
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.maxassistant.app/com.maxassistant.app.automation.BrowserActivity}: android.util.AndroidRuntimeException: android.webkit.WebViewFactory$MissingWebViewPackageException: Failed to load WebView provider: No WebView installed
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2817)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2892)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.ActivityThread.-wrap11(Unknown Source:0)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1593)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:164)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:6541)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at com.android.internal.os.Zygote$MethodAndArgsCaller.run(Zygote.java:240)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:767)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: Caused by: android.util.AndroidRuntimeException: android.webkit.WebViewFactory$MissingWebViewPackageException: Failed to load WebView provider: No WebView installed
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebViewFactory.getProviderClass(WebViewFactory.java:438)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebViewFactory.getProvider(WebViewFactory.java:211)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.getFactory(WebView.java:2467)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.ensureProviderCreated(WebView.java:2462)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.setOverScrollMode(WebView.java:2527)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.view.View.<init>(View.java:4536)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.view.View.<init>(View.java:4668)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.view.ViewGroup.<init>(ViewGroup.java:597)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.widget.AbsoluteLayout.<init>(AbsoluteLayout.java:55)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.<init>(WebView.java:636)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.<init>(WebView.java:581)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.<init>(WebView.java:564)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.<init>(WebView.java:551)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebView.<init>(WebView.java:541)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at com.maxassistant.app.automation.BrowserActivity.onCreate(BrowserActivity.java:78)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:6975)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1213)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2770)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	... 9 more
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: Caused by: android.webkit.WebViewFactory$MissingWebViewPackageException: Failed to load WebView provider: No WebView installed
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebViewFactory.getWebViewContextAndSetProvider(WebViewFactory.java:334)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	at android.webkit.WebViewFactory.getProviderClass(WebViewFactory.java:398)
+11-10 19:27:55.620  4423  4423 E AndroidRuntime: 	... 26 more

@@ -29,11 +29,12 @@ notification inbox, user-controlled background scheduler and local llama.cpp inf
 - [x] Product UI: onboarding, chat and voice, tasks, inbox, memory, settings and permissions.
 - [x] Integrate, independent review, tests/lint, assemble and inspect APK, attempt emulator QA.
 
-Observed validation: JVM 8/8, lint 0 errors/7 warnings, signed and aligned APK,
-actual host inference, Android native load and 9 emulator checks including screen-off
-background failure handling. Physical ARM64 execution and authenticated provider/app
-accounts remain untested. GitHub CI setup needed explicit platform-tools because the
-action's historical default requests removed package tools; corrected run is pending.
+Observed validation: JVM 8/8, lint 0 errors/8 warnings, signed and aligned APK,
+actual host inference, Android native load, and 13 accepted emulator checks including
+screen-off background failure handling and the missing-WebView regression. Physical
+ARM64 execution and authenticated provider/app accounts remain untested. GitHub CI
+run 42928447171 succeeded on the final application source after the obsolete SDK
+package default was corrected.
 
 ## Ownership and interfaces
 

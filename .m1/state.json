@@ -3,14 +3,14 @@
   "run_id": "max-android-20261110",
   "goal": "Build Arabic Android AI assistant APK from Musabgpt/Max",
   "status": "active",
-  "phase": "APK release delivery",
-  "last_verified_step": "Source pushed main; 9 emulator checks passed, including screen-off background failure path",
-  "next_action": "Publish verified APK release and source archive; inspect corrected CI run",
+  "phase": "publish verified prerelease",
+  "last_verified_step": "Final APK verified; 8JVM tests and 13emulator checks passed; final app CI succeeded; public download matches",
+  "next_action": "Push evidence and preview2 tag, create linked prerelease without asset-upload endpoint, verify tag download",
   "active_operation": {
-    "id": "publish-apk-preview-v1",
-    "target": "Musabgpt/Max tag v1.0.0-preview.1",
-    "artifact_sha256": "d1c0e5ff1fbfc19d346485b28337d28c838714983b1a3f781ad0789f483a2353",
-    "completion_signal": "GitHub release asset available and checksum matches"
+    "id": "publish-apk-preview-v2",
+    "target": "Musabgpt/Max v1.0.0-preview.2",
+    "artifact_sha256": "46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d",
+    "completion_signal": "release published and immutable tag download hash matches"
   },
   "changed_files": [],
   "checks": [
@@ -33,21 +33,76 @@
     {
       "command": "GitHub Actions42884966961",
       "result": "failed setup-android default obsolete tools package; workflow corrected to platform-tools, awaiting rerun"
+    },
+    {
+      "command": "BrowserActivity launch on API26 without WebView",
+      "result": "failed: MissingWebViewPackageException; service owner fixing fallback"
+    },
+    {
+      "command": "resume-final-build.log + apksigner + zipalign",
+      "result": "BUILD SUCCESSFUL;8JVM passed;lint0errors8warnings;v2signature and16KB alignment verified;SHA46fd8641…"
+    },
+    {
+      "command": "verified-browser-regression.log",
+      "result": "4/4 final browser checks passed;13/13 accepted emulator checks overall;no final crash"
+    },
+    {
+      "command": "GitHub Actions42928447171",
+      "result": "success;app source matches release candidate"
+    },
+    {
+      "command": "public raw main APK download",
+      "result": "HTTP200;9537954bytes;SHA46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d"
     }
   ],
   "decisions": [
     "Native Java Android",
     "Free local Qwen2.5 0.5B; optional NVIDIA",
     "Official user-granted permissions only",
-    "Independent review fixed drafts, work defaults, target screen, browser form identity; scope native cancellation by request owner"
+    "Independent review fixed drafts, work defaults, target screen, browser form identity; scope native cancellation by request owner",
+    "GitHub uploads.github.com asset upload returned401; do not repeat. Deliver APK through repository raw URL and a text release, no user credentials requested.",
+    "Reuse accepted baseline/native evidence. Rebuild required because final insets edit was not compiled before interruption. Repair deterministic QA fixture: AOSP WebView Shell exists but crashes without provider; temporarily disable it only on disposable emulator for no-browser branch.",
+    "Final QA-only evidence commit skips duplicate CI; app/build source exactly matches accepted CI commit dee44ee. No production change after frozen APK46fd8641."
   ],
   "blockers": [],
   "unverified_claims": [],
   "git": {
     "root": "/workspace/Max",
-    "HEAD": "0d2e0e0e3e7edcb67c3cd97d582da63ed8feddee",
+    "HEAD": "dee44ee6575b257b5182844c166531c1f7878fa8",
     "branch": "feature/max-assistant",
-    "dirty_paths": []
+    "dirty_paths": [
+      " M .m1/events.jsonl",
+      " M .m1/findings.md",
+      " M .m1/state.json",
+      " M docs/qa/android-ui-smoke.md",
+      " M docs/qa/build-verification.json",
+      " M docs/qa/screenshots/home.png",
+      " M docs/qa/smoke-results.json",
+      " M docs/superpowers/plans/2026-11-10-max-android.md",
+      " M scripts/smoke-test.py",
+      "?? docs/qa/204-ui.xml",
+      "?? docs/qa/205-ui.xml",
+      "?? docs/qa/206-ui.xml",
+      "?? docs/qa/301-ui.xml",
+      "?? docs/qa/302-ui.xml",
+      "?? docs/qa/303-ui.xml",
+      "?? docs/qa/304-ui.xml",
+      "?? docs/qa/305-ui.xml",
+      "?? docs/qa/306-ui.xml",
+      "?? docs/qa/307-provider-fallback.xml",
+      "?? docs/qa/308-ui.xml",
+      "?? docs/qa/309-ui.xml",
+      "?? docs/qa/310-ui.xml",
+      "?? docs/qa/311-provider-fallback-rotated.xml",
+      "?? docs/qa/312-ui.xml",
+      "?? docs/qa/401-ui.xml",
+      "?? docs/qa/browser-after-fix-crash.txt",
+      "?? docs/qa/browser-before-fix-crash.txt",
+      "?? docs/qa/history/",
+      "?? docs/qa/published-apk.json",
+      "?? docs/qa/screenshots/browser-provider-unavailable.png",
+      "?? docs/qa/webview-provider-state.txt"
+    ]
   },
-  "updated_at": "2026-11-10T19:27:31.090863+00:00"
+  "updated_at": "2026-11-11T00:14:09.586359+00:00"
 }
