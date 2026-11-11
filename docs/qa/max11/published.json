@@ -1,0 +1,21 @@
+{
+  "version": "1.1.0",
+  "version_code": 3,
+  "tag": "v1.1.0-preview.1",
+  "release_commit": "f572af2b04d29c488f3b2752c16e90b31dc510ab",
+  "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.1.0-preview.1",
+  "apk_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.1.0-preview.1/apk/MaxAssistant-v1.apk",
+  "public_download_verified_at": "2026-11-11T09:52:10.109979+00:00",
+  "bytes": 7285904,
+  "sha256": "1f984e82d88c049b390f2a82c122ab9e8f370049d325125bf80a3e38fa4698ae",
+  "public_download": "HTTP200; complete independent download matches frozen local APK",
+  "app_source_commit": "60b879abb4f34a610e988a7c1e113aacf12995fd",
+  "ci_url": "https://github.com/Musabgpt/Max/actions/runs/42990091051",
+  "ci_conclusion": "success",
+  "app_source_matches_ci": true,
+  "jvm_tests": 69,
+  "distinct_android_scenarios": 15,
+  "old_version_seed_checks": 1,
+  "extra_voice_visibility_check": "passed; no production change was necessary",
+  "delivery": "APK served through immutable repository raw URL; release body links directly to it"
+}

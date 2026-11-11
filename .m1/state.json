@@ -2,10 +2,10 @@
   "schema_version": 1,
   "run_id": "max-android-20261110",
   "goal": "Build Arabic Android AI assistant APK from Musabgpt/Max",
-  "status": "active",
-  "phase": "verified frozen1.1.0 candidate; publishing source/APK",
-  "last_verified_step": "69JVM,lint0errors12warnings,CI60b879 success;15distinct Android scenarios + old seed + visible unsent voice draft passed across API30/API26",
-  "next_action": "Commit and publish same-signer APK1f984e82 under immutable v1.1.0-preview.1; verify public byte count/SHA and release API",
+  "status": "completed",
+  "phase": "MAX1.1.0 published and immutable public APK verified",
+  "last_verified_step": "Public APK HTTP200,7285904bytes,SHA1f984e82 matches signed candidate; GitHub release published and app tree matches passing CI",
+  "next_action": "Install1.1.0 over previous app and enable desired Android permissions; no release implementation step pending",
   "active_operation": null,
   "changed_files": [],
   "checks": [
@@ -92,6 +92,10 @@
     {
       "command": "acceptance.json + run-voice-visible-red/instrumentation.txt",
       "result": "15distinct scenarios accepted plus old seed; speech serviceerror12 -> real Activity result -> visible unsentArabicdraft; no product source changes after60b879."
+    },
+    {
+      "command": "Immutable public download + gh release view + app tree compare",
+      "result": "HTTP200;7285904bytes;SHA1f984e82d88c049b390f2a82c122ab9e8f370049d325125bf80a3e38fa4698ae;published prerelease;app source identical to CI60b879."
     }
   ],
   "decisions": [
@@ -110,19 +114,34 @@
   "unverified_claims": [],
   "git": {
     "root": "/workspace/Max",
-    "HEAD": "f6754d6facb9b5795a4e24ff81f06f9f02faddcf",
+    "HEAD": "f572af2b04d29c488f3b2752c16e90b31dc510ab",
     "branch": "feature/max-assistant",
-    "dirty_paths": []
+    "dirty_paths": [],
+    "snapshot": "Frozen release before this documentation-only receipt commit"
   },
-  "updated_at": "2026-11-11T09:49:14.327419+00:00",
+  "updated_at": "2026-11-11T09:52:10.109979+00:00",
   "delivery": {
-    "version": "1.0.1",
-    "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.1-preview.1",
-    "apk_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.0.1-preview.1/apk/MaxAssistant-v1.apk",
-    "sha256": "2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4",
-    "bytes": 7200618,
-    "source_commit": "3c01a4f684d2f9f3d75757740c50d020ad578ecd",
-    "scope": "NVIDIA410 recovery and credential-preserving APK update"
+    "version": "1.1.0",
+    "version_code": 3,
+    "tag": "v1.1.0-preview.1",
+    "release_commit": "f572af2b04d29c488f3b2752c16e90b31dc510ab",
+    "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.1.0-preview.1",
+    "apk_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.1.0-preview.1/apk/MaxAssistant-v1.apk",
+    "public_download_verified_at": "2026-11-11T09:52:10.109979+00:00",
+    "bytes": 7285904,
+    "sha256": "1f984e82d88c049b390f2a82c122ab9e8f370049d325125bf80a3e38fa4698ae",
+    "public_download": "HTTP200; complete independent download matches frozen local APK",
+    "app_source_commit": "60b879abb4f34a610e988a7c1e113aacf12995fd",
+    "ci_url": "https://github.com/Musabgpt/Max/actions/runs/42990091051",
+    "ci_conclusion": "success",
+    "app_source_matches_ci": true,
+    "jvm_tests": 69,
+    "distinct_android_scenarios": 15,
+    "old_version_seed_checks": 1,
+    "extra_voice_visibility_check": "passed; no production change was necessary",
+    "delivery": "APK served through immutable repository raw URL; release body links directly to it",
+    "source_commit": "f572af2b04d29c488f3b2752c16e90b31dc510ab",
+    "scope": "Reviewed phone tasks, actual local HTML execution, null protection and speech fallback; same-signer data-preserving update"
   },
   "remaining_limitations": [
     "Android permissions require user enablement; UI automation stops when locked and cannot run on a powered-off phone",
