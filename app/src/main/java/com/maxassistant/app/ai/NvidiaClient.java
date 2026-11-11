@@ -71,6 +71,7 @@ public final class NvidiaClient {
         // truncated empty answer. Authentication, quota and network errors do not replay.
         for(int attempt=0;attempt<2;attempt++){
             checkCancelled();
+            if(model.startsWith("openai/gpt-oss-"))budget=Math.max(4096,budget);
             Response response=send("POST",CHAT_URL,key,payload(model,messages,budget));
             if(response.status==200){
                 String text=answer(response.body);

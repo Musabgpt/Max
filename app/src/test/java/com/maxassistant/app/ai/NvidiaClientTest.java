@@ -117,4 +117,11 @@ public final class NvidiaClientTest {
         Fake f=new Fake().respond(200,"{\"choices\":[{\"message\":{\"content\":[{\"type\":\"reasoning\",\"text\":\"PRIVATE\"},{\"type\":\"text\",\"text\":\"أهلًا\"}]}}]}");
         assertEquals("أهلًا",new NvidiaClient(KEY,f).complete("example/custom-instruct","",messages()).text);
     }
+    @Test public void truncatedGptAnswerRaisesTheActualBudgetOnce() throws Exception {
+        Fake f=new Fake().respond(200,"{\"choices\":[{\"finish_reason\":\"length\",\"message\":{\"content\":null}}]}").respond(200,answer("جواب نهائي"));
+        assertEquals("جواب نهائي",new NvidiaClient(KEY,f).complete("openai/gpt-oss-20b","",messages()).text);
+        assertEquals(2,f.calls.size());
+        assertEquals(4096,new JSONObject(f.calls.get(0).body).getInt("max_tokens"));
+        assertEquals(8192,new JSONObject(f.calls.get(1).body).getInt("max_tokens"));
+    }
 }
