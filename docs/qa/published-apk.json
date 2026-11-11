@@ -1,15 +1,12 @@
 {
-  "url": "https://raw.githubusercontent.com/Musabgpt/Max/main/apk/MaxAssistant-v1.apk",
+  "version": "1.0.1",
+  "tag": "v1.0.1-preview.1",
+  "immutable_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.0.1-preview.1/apk/MaxAssistant-v1.apk",
   "http_status": 200,
-  "bytes": 9537954,
-  "sha256": "46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d",
+  "bytes": 7200618,
+  "sha256": "2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4",
   "matched_local_signed_apk": true,
-  "immutable_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.0.0-preview.2/apk/MaxAssistant-v1.apk",
-  "immutable_http_status": 200,
-  "content_type": "application/octet-stream",
-  "immutable_sha256": "46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d",
-  "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.0-preview.2",
-  "release_id": 441081396,
-  "tag": "v1.0.0-preview.2",
-  "verified_at": "2026-11-11T00:15:23.708395+00:00"
+  "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.1-preview.1",
+  "release_id": 441109467,
+  "verified_at": "2026-11-11T00:56:58.825923+00:00"
 }

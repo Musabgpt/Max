@@ -1,17 +1,21 @@
-# MAX Android delivery complete
+# MAX Android1.0.1 delivery complete
 
-Goal: build the requested Arabic Android assistant APK in Musabgpt/Max.
+Latest user issue: NVIDIA HTTP410 on Hi. Root cause was the shipped obsolete
+meta/llama-3.1-8b-instruct hosted endpoint (public metadata confirms EOL2026-08-26).
 
-Verified first preview delivered as v1.0.0-preview.2.
-APK: https://raw.githubusercontent.com/Musabgpt/Max/v1.0.0-preview.2/apk/MaxAssistant-v1.apk
-Release: https://github.com/Musabgpt/Max/releases/tag/v1.0.0-preview.2
-SHA256: 46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d
+Update:https://raw.githubusercontent.com/Musabgpt/Max/v1.0.1-preview.1/apk/MaxAssistant-v1.apk
+Release:https://github.com/Musabgpt/Max/releases/tag/v1.0.1-preview.1
+SHA256:2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4
 
-Application source passed8JVM tests, lint0errors8warnings, signature/16KB alignment,
-13accepted emulator checks and GitHub Actions42928447171. Actual Qwen generation
-passed on host JNI; Android x86_64 loaded the bundled native libraries.
+NvidiaClient now selects live catalog chat models, migrates the old default to
+auto and retries a model-unavailable404/410 once within NVIDIA. Other failures
+do not resend the prompt. Stored API key/SQLite paths remain unchanged.
 
-The release source commit is 7c7cf3c4758b0ba2cc3731df667e77f44159c343. A later docs-only
-receipt commit may follow; production code and frozen APK remain unchanged.
-No active job or approval is pending. Scope limits and full evidence are in README
-and docs/qa. Resume only for user follow-up; inspect actual files/release first.
+Verified20JVM tests, lint0errors8warnings, same signing certificate as1.0.0,
+3Android instrumentation checks across genuine install-r upgrade (encrypted
+key+memory retained), actual Android JSON recovery, settings UI, and GitHub CI
+42934336266 on application source8d1e89d. Pinned public APK digest matched.
+No real user key was requested or used; authenticated NVIDIA inference still
+needs the user to retry on their device. Old general feature limits remain in
+README. No job/approval pending. Future changes should preserve signing identity
+and inspect the release and .m1 state before retrying publication.
