@@ -1,0 +1,52 @@
+{
+  "version": "1.0.1",
+  "version_code": 2,
+  "verified_at": "2026-11-11T00:49:16.745876+00:00",
+  "artifact": "apk/MaxAssistant-v1.apk",
+  "bytes": 7200618,
+  "sha256": "2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4",
+  "minSdk": 26,
+  "targetSdk": 35,
+  "abis": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "tests": {
+    "com.maxassistant.app.ai.CommandRouterTest": {
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    "com.maxassistant.app.ai.NvidiaClientTest": {
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  },
+  "android_upgrade": {
+    "seed_on_v1": "1/1 passed",
+    "verify_on_v2": "2/2 passed",
+    "saved_encrypted_key_preserved": true,
+    "local_memory_preserved": true,
+    "same_signing_cert": "f646305489684b9f2647dbe5ad5336bf8a3a21ff7a3c939eb5e936cc3df2e418",
+    "android_json_410_recovery": "passed with deterministic transport",
+    "settings_ui": "passed: auto shown; saved key not displayed; no final crash"
+  },
+  "native_libraries_unchanged": 4,
+  "nvidia_live_probe": "Retired model metadata410; current public catalog200 and preferred model metadata200; no authenticated inference tested",
+  "signature": "apksigner verified",
+  "native_alignment": "zipalign -c -P16 passed",
+  "github_ci": {
+    "run": 42934336266,
+    "commit": "8d1e89d11955d9a76b24e825f221e796b5e8707b",
+    "conclusion": "success",
+    "url": "https://github.com/Musabgpt/Max/actions/runs/42934336266",
+    "release_app_source_matches": true
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 8
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1",
-  "version_code": 2,
-  "verified_at": "2026-11-11T00:49:16.745876+00:00",
+  "version": "1.1.0",
+  "version_code": 3,
+  "verified_at": "2026-11-11T09:42:32.405000+00:00",
   "artifact": "apk/MaxAssistant-v1.apk",
-  "bytes": 7200618,
-  "sha256": "2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4",
+  "bytes": 7285904,
+  "sha256": "1f984e82d88c049b390f2a82c122ab9e8f370049d325125bf80a3e38fa4698ae",
   "minSdk": 26,
   "targetSdk": 35,
   "abis": [
@@ -12,41 +12,95 @@
     "x86_64"
   ],
   "tests": {
+    "com.maxassistant.app.preview.HtmlDocumentsTest": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "com.maxassistant.app.ai.TaskIntentTest": {
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "com.maxassistant.app.ai.ReplyTextTest": {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "com.maxassistant.app.voice.SpeechPolicyTest": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "com.maxassistant.app.automation.DeviceTaskParserTest": {
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "com.maxassistant.app.preview.HtmlArtifactStoreTest": {
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "com.maxassistant.app.automation.DevicePlanTest": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
     "com.maxassistant.app.ai.CommandRouterTest": {
-      "tests": "8",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0"
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
     },
     "com.maxassistant.app.ai.NvidiaClientTest": {
-      "tests": "12",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0"
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "com.maxassistant.app.automation.CommitGuardTest": {
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
     }
   },
-  "android_upgrade": {
-    "seed_on_v1": "1/1 passed",
-    "verify_on_v2": "2/2 passed",
-    "saved_encrypted_key_preserved": true,
-    "local_memory_preserved": true,
-    "same_signing_cert": "f646305489684b9f2647dbe5ad5336bf8a3a21ff7a3c939eb5e936cc3df2e418",
-    "android_json_410_recovery": "passed with deterministic transport",
-    "settings_ui": "passed: auto shown; saved key not displayed; no final crash"
-  },
+  "signature": "apksigner v2 verified; same certificate as1.0.1",
+  "signer_sha256": "f646305489684b9f2647dbe5ad5336bf8a3a21ff7a3c939eb5e936cc3df2e418",
+  "native_alignment": "zipalign -c -P16 4 passed on final APK1f984e82",
   "native_libraries_unchanged": 4,
-  "nvidia_live_probe": "Retired model metadata410; current public catalog200 and preferred model metadata200; no authenticated inference tested",
-  "signature": "apksigner verified",
-  "native_alignment": "zipalign -c -P16 passed",
-  "github_ci": {
-    "run": 42934336266,
-    "commit": "8d1e89d11955d9a76b24e825f221e796b5e8707b",
-    "conclusion": "success",
-    "url": "https://github.com/Musabgpt/Max/actions/runs/42934336266",
-    "release_app_source_matches": true
-  },
   "lint": {
     "Error": 0,
-    "Warning": 8
-  }
+    "Warning": 12
+  },
+  "android_acceptance": {
+    "status": "passed_with_documented_environment_repairs",
+    "total_checks": 16,
+    "distinct_scenarios": 15,
+    "old_version_seed": 1,
+    "receipt": "docs/qa/max11/acceptance.json",
+    "real_webview_calculator": "2+3*4=14, including main chat command without model",
+    "encrypted_key_memory_chat_upgrade": "passed from version2/schema1 to version3/schema2",
+    "reviewed_device_cases": 10,
+    "speech_error12": "passed: service error12 -> system Activity -> unsent Arabic draft",
+    "scope": "Official emulators and local no-network social/speech fixtures; live account behavior untested",
+    "network_validation_limit": "HTML sandbox DOM/settings rejection checks passed; API30 full-run host observer archive unavailable after interruption"
+  },
+  "github_ci": {
+    "run": 42990091051,
+    "commit": "60b879abb4f34a610e988a7c1e113aacf12995fd",
+    "conclusion": "success",
+    "url": "https://github.com/Musabgpt/Max/actions/runs/42990091051",
+    "release_app_source_matches": true
+  },
+  "app_source_commit": "60b879abb4f34a610e988a7c1e113aacf12995fd",
+  "app_tree": "c00adb33ae202a610aebe4b98f6b683eaee9f29c"
 }

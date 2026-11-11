@@ -1,0 +1,9 @@
+{
+  "started": "2026-11-11T09:39:47.141525+00:00",
+  "serial": "emulator-5554",
+  "classes": "qa.max11.Max11VoiceTest",
+  "expectedTests": 1,
+  "observedTests": 1,
+  "passed": true,
+  "scope": "Official emulator; fixture social/speech providers; no real account or microphone hardware test"
+}

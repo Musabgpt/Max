@@ -1,0 +1,86 @@
+{
+  "verified_at": "2026-11-11T09:42:32.405000+00:00",
+  "candidate_sha256": "1f984e82d88c049b390f2a82c122ab9e8f370049d325125bf80a3e38fa4698ae",
+  "distinct_accepted_tests": 15,
+  "old_version_seed": 1,
+  "total_accepted_android_checks": 16,
+  "cases": {
+    "qa.max11.Max11UpgradeVerifyTest#testEncryptedKeyMemoryAndLegacyChatSurvive": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/partial-first-run.txt"
+    },
+    "qa.max11.Max11HtmlTest#testCalculatorExecutesTwoPlusThreeTimesFour": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/partial-first-run.txt"
+    },
+    "qa.max11.Max11HtmlTest#testMainCalculatorCommandRunsBeforeModelReadinessCheck": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/partial-first-run.txt"
+    },
+    "qa.max11.Max11HtmlTest#testSandboxBlocksNetworkFileContentAndNativeBridge": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-remaining/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testCancelPreparedDraftNeverCommits": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testChangedWhatsAppRecipientIsRejected": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testEditedDraftIsRejectedAtFinalConfirmation": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testFinalConfirmationCommitsExactlyOnce": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testHomeCancelsPreparedCommit": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testInitialReviewCancellationDoesNotLaunchOrCommit": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testLockedDeviceCancelsPreparedCommit": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testScreenshotCommandRoutesFromChatWithoutModel": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26-repaired/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testWhatsAppRecipientAndExplicitSingleCommit": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26-repaired/instrumentation.txt"
+    },
+    "qa.max11.Max11DeviceTest#testWrongForegroundAppCancelsPreparedCommit": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-api26-repaired/instrumentation.txt"
+    },
+    "qa.max11.Max11VoiceTest#testUnsupportedArabicFallsBackAndRemainsUnsentDraft": {
+      "status": "passed",
+      "evidence": "docs/qa/max11/run-voice/instrumentation.txt"
+    }
+  },
+  "execution": "Accepted per-test completion records across official API30 GoogleApis and API26 AOSP; no claim of one uninterrupted full-suite run",
+  "repairs": [
+    "Operator interrupted first slow run after3 successes; accepted evidence retained",
+    "API30 PixelLauncher/SystemUI ANR dialogs blocked phone cases; moved those cases to lighter API26",
+    "API26 stale PIN bouncer after credential removal; repaired QA cleanup and ran only four blocked cases",
+    "API26 RecognitionService binds directly; rebuilt only speech fixture without modern system-only bind permission, then error12 test passed"
+  ],
+  "limits": [
+    "No live social accounts, real sends/posts, bookings, microphone hardware or authenticated NVIDIA inference",
+    "HTML sandbox DOM/settings rejection checks passed; API30 full-run host observer archive unavailable after interruption"
+  ],
+  "voice_visibility_check": {
+    "result": "passed on unchanged final APK",
+    "evidence": "docs/qa/max11/run-voice-visible-red/instrumentation.txt",
+    "scope": "Arabic transcript matches, at least half of input field intersects the visible screen, and transcript remains unsent",
+    "note": "Directory name was chosen before execution; check passed immediately, so no production change was made."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "source": "https://dl.google.com/android/repository/sys-img/google_apis/x86_64-30_r16.zip",
+  "repository": "https://dl.google.com/android/repository/sys-img/google_apis/sys-img2-1.xml",
+  "package": "system-images;android-30;google_apis;x86_64",
+  "revision": 16,
+  "compressedBytes": 1438186618,
+  "uncompressedBytes": 3442796119,
+  "sha1": "6ae21030eaadc041078444d3798e4b399f3e787d",
+  "status": "official_sha1_verified_and_extracted",
+  "sourceProperties": "Pkg.Desc=System Image x86_64 with Google APIs.\nPkg.Revision=16\nPkg.Dependencies=emulator#30.8.0\nAndroidVersion.ApiLevel=30\nSystemImage.Abi=x86_64\nSystemImage.TagId=google_apis\nSystemImage.TagDisplay=Google APIs\nSystemImage.GpuSupport=true\nAddon.VendorId=google\nAddon.VendorDisplay=Google Inc.\n\n"
+}

@@ -1,0 +1,294 @@
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+qa.max11.Max11DeviceTest:
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testScreenshotCommandRoutesFromChatWithoutModel
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testScreenshotCommandRoutesFromChatWithoutModel
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWhatsAppRecipientAndExplicitSingleCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWhatsAppRecipientAndExplicitSingleCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWrongForegroundAppCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWrongForegroundAppCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+qa.max11.Max11VoiceTest:
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testUnsupportedArabicFallsBackAndRemainsUnsentDraft
+INSTRUMENTATION_STATUS: class=qa.max11.Max11VoiceTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+Failure in testUnsupportedArabicFallsBackAndRemainsUnsentDraft:
+junit.framework.AssertionFailedError: Unsupported-language provider invoked; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/home | null | Home
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | com.android.systemui:id/recent_apps | null | Overview
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area_inner | null | null
+com.android.systemui | com.android.systemui:id/notificationIcons | null | null
+com.android.systemui | null | null | Android System notification: USB debugging connected
+com.android.systemui | com.android.systemui:id/system_icon_area | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/clock | 9:38 | 9:38 AM
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | android:id/content | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦  MAX | null
+com.maxassistant.app | null | ● وضع العمل | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | بدأت تجهيز المسودة في Facebook QA Fixture. أنتظر تأكيدًا منفصلًا قبل أي إرسال أو نشر. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | جهزت المسودة في Facebook QA Fixture. أنتظر تأكيدك على الشاشة قبل الضغط النهائي؛ لم أرسل أو أنشر بعد. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | تغيّر التطبيق أو النافذة النشطة؛ أُلغيت المهمة. راجع المسودة ثم أعد الطلب من MAX. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_input | افتح واتساب | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_send | إرسال ↑ | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_voice | ◉ صوت | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦
+مساعدي | ✦ مساعدي
+com.maxassistant.app | null | ◷
+مهامي | ◷ مهامي
+com.maxassistant.app | null | ▤
+الوارد | ▤ الوارد
+com.maxassistant.app | null | ◇
+ذاكرتي | ◇ ذاكرتي
+com.maxassistant.app | null | ⚙
+الإعدادات | ⚙ الإعدادات
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | android:id/content | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦  MAX | null
+com.maxassistant.app | null | ● وضع العمل | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | بدأت تجهيز المسودة في Facebook QA Fixture. أنتظر تأكيدًا منفصلًا قبل أي إرسال أو نشر. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | جهزت المسودة في Facebook QA Fixture. أنتظر تأكيدك على الشاشة قبل الضغط النهائي؛ لم أرسل أو أنشر بعد. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | تغيّر التطبيق أو النافذة النشطة؛ أُلغيت المهمة. راجع المسودة ثم أعد الطلب من MAX. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_input | افتح واتساب | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_send | إرسال ↑ | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_voice | ◉ صوت | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦
+مساعدي | ✦ مساعدي
+com.maxassistant.app | null | ◷
+مهامي | ◷ مهامي
+com.maxassistant.app | null | ▤
+الوارد | ▤ الوارد
+com.maxassistant.app | null | ◇
+ذاكرتي | ◇ ذاكرتي
+com.maxassistant.app | null | ⚙
+الإعدادات | ⚙ الإعدادات
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11VoiceTest.testUnsupportedArabicFallsBackAndRemainsUnsentDraft(Max11VoiceTest.java:21)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testUnsupportedArabicFallsBackAndRemainsUnsentDraft
+INSTRUMENTATION_STATUS: class=qa.max11.Max11VoiceTest
+INSTRUMENTATION_STATUS: stack=junit.framework.AssertionFailedError: Unsupported-language provider invoked; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/home | null | Home
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | com.android.systemui:id/recent_apps | null | Overview
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area_inner | null | null
+com.android.systemui | com.android.systemui:id/notificationIcons | null | null
+com.android.systemui | null | null | Android System notification: USB debugging connected
+com.android.systemui | com.android.systemui:id/system_icon_area | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/clock | 9:38 | 9:38 AM
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | android:id/content | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦  MAX | null
+com.maxassistant.app | null | ● وضع العمل | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | بدأت تجهيز المسودة في Facebook QA Fixture. أنتظر تأكيدًا منفصلًا قبل أي إرسال أو نشر. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | جهزت المسودة في Facebook QA Fixture. أنتظر تأكيدك على الشاشة قبل الضغط النهائي؛ لم أرسل أو أنشر بعد. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | تغيّر التطبيق أو النافذة النشطة؛ أُلغيت المهمة. راجع المسودة ثم أعد الطلب من MAX. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_input | افتح واتساب | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_send | إرسال ↑ | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_voice | ◉ صوت | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦
+مساعدي | ✦ مساعدي
+com.maxassistant.app | null | ◷
+مهامي | ◷ مهامي
+com.maxassistant.app | null | ▤
+الوارد | ▤ الوارد
+com.maxassistant.app | null | ◇
+ذاكرتي | ◇ ذاكرتي
+com.maxassistant.app | null | ⚙
+الإعدادات | ⚙ الإعدادات
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | android:id/content | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦  MAX | null
+com.maxassistant.app | null | ● وضع العمل | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | بدأت تجهيز المسودة في Facebook QA Fixture. أنتظر تأكيدًا منفصلًا قبل أي إرسال أو نشر. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | جهزت المسودة في Facebook QA Fixture. أنتظر تأكيدك على الشاشة قبل الضغط النهائي؛ لم أرسل أو أنشر بعد. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦ ماكس | null
+com.maxassistant.app | null | تغيّر التطبيق أو النافذة النشطة؛ أُلغيت المهمة. راجع المسودة ثم أعد الطلب من MAX. | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_input | افتح واتساب | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_send | إرسال ↑ | null
+com.maxassistant.app | com.maxassistant.app:id/assistant_voice | ◉ صوت | null
+com.maxassistant.app | null | null | null
+com.maxassistant.app | null | ✦
+مساعدي | ✦ مساعدي
+com.maxassistant.app | null | ◷
+مهامي | ◷ مهامي
+com.maxassistant.app | null | ▤
+الوارد | ▤ الوارد
+com.maxassistant.app | null | ◇
+ذاكرتي | ◇ ذاكرتي
+com.maxassistant.app | null | ⚙
+الإعدادات | ⚙ الإعدادات
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11VoiceTest.testUnsupportedArabicFallsBackAndRemainsUnsentDraft(Max11VoiceTest.java:21)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=....F
+Time: 108.357
+
+FAILURES!!!
+Tests run: 4,  Failures: 1,  Errors: 0
+
+
+INSTRUMENTATION_CODE: -1

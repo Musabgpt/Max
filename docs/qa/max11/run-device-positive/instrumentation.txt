@@ -1,0 +1,193 @@
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+qa.max11.Max11DeviceTest:
+INSTRUMENTATION_STATUS: test=testFinalConfirmationCommitsExactlyOnce
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stack=junit.framework.AssertionFailedError: Concrete plan review is visible; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/horizontal | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/recent_apps | null | Overview
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/home | null | null
+com.android.systemui | com.android.systemui:id/home_button | null | Home
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/white_cutout | null | null
+com.android.systemui | com.android.systemui:id/white | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/status_bar_left_side | null | null
+com.android.systemui | com.android.systemui:id/clock | 9:16 | 9:16 AM
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area_inner | null | null
+com.android.systemui | com.android.systemui:id/notificationIcons | null | null
+com.android.systemui | null | null | Pixel Launcher notification: Enable Google Play services
+com.android.systemui | null | null | Messages notification: Enable Google Play services
+com.android.systemui | null | null | Android Auto notification: Enable Google Play services
+com.android.systemui | null | null | Google Partner Setup notification: Enable Google Play services
+com.android.systemui | null | null | Gmail notification: Enable Google Play services
+com.android.systemui | null | null | Android System notification: Serial console enabled
+com.android.systemui | null | null | Gboard notification: Enable Google Play services
+com.android.systemui | null | null | Drive notification: Enable Google Play services
+com.android.systemui | null | null | Carrier Services notification: Enable Google Play services
+com.android.systemui | null | null | Calendar notification: Enable Google Play services
+com.android.systemui | com.android.systemui:id/system_icon_area | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/statusIcons | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | Phone three bars.
+com.android.systemui | com.android.systemui:id/mobile_group | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | null | null | null
+android | null | null | null
+android | null | null | null
+android | android:id/content | null | null
+android | android:id/parentPanel | null | null
+android | android:id/topPanel | null | null
+android | android:id/title_template | null | null
+android | android:id/alertTitle | Pixel Launcher isn't responding | null
+android | android:id/customPanel | null | null
+android | android:id/custom | null | null
+android | null | null | null
+android | android:id/aerr_close | Close app | null
+android | android:id/aerr_wait | Wait | null
+android | null | null | null
+android | null | null | null
+android | android:id/content | null | null
+android | android:id/parentPanel | null | null
+android | android:id/topPanel | null | null
+android | android:id/title_template | null | null
+android | android:id/alertTitle | Pixel Launcher isn't responding | null
+android | android:id/customPanel | null | null
+android | android:id/custom | null | null
+android | null | null | null
+android | android:id/aerr_close | Close app | null
+android | android:id/aerr_wait | Wait | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.review(Max11DeviceTest.java:23)
+	at qa.max11.Max11DeviceTest.facebookDraft(Max11DeviceTest.java:26)
+	at qa.max11.Max11DeviceTest.testFinalConfirmationCommitsExactlyOnce(Max11DeviceTest.java:52)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:564)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2205)
+
+INSTRUMENTATION_STATUS: stream=
+Failure in testFinalConfirmationCommitsExactlyOnce:
+junit.framework.AssertionFailedError: Concrete plan review is visible; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/horizontal | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/recent_apps | null | Overview
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/home | null | null
+com.android.systemui | com.android.systemui:id/home_button | null | Home
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/white_cutout | null | null
+com.android.systemui | com.android.systemui:id/white | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/status_bar_left_side | null | null
+com.android.systemui | com.android.systemui:id/clock | 9:16 | 9:16 AM
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area_inner | null | null
+com.android.systemui | com.android.systemui:id/notificationIcons | null | null
+com.android.systemui | null | null | Pixel Launcher notification: Enable Google Play services
+com.android.systemui | null | null | Messages notification: Enable Google Play services
+com.android.systemui | null | null | Android Auto notification: Enable Google Play services
+com.android.systemui | null | null | Google Partner Setup notification: Enable Google Play services
+com.android.systemui | null | null | Gmail notification: Enable Google Play services
+com.android.systemui | null | null | Android System notification: Serial console enabled
+com.android.systemui | null | null | Gboard notification: Enable Google Play services
+com.android.systemui | null | null | Drive notification: Enable Google Play services
+com.android.systemui | null | null | Carrier Services notification: Enable Google Play services
+com.android.systemui | null | null | Calendar notification: Enable Google Play services
+com.android.systemui | com.android.systemui:id/system_icon_area | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/statusIcons | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | Phone three bars.
+com.android.systemui | com.android.systemui:id/mobile_group | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | null | null | null
+android | null | null | null
+android | null | null | null
+android | android:id/content | null | null
+android | android:id/parentPanel | null | null
+android | android:id/topPanel | null | null
+android | android:id/title_template | null | null
+android | android:id/alertTitle | Pixel Launcher isn't responding | null
+android | android:id/customPanel | null | null
+android | android:id/custom | null | null
+android | null | null | null
+android | android:id/aerr_close | Close app | null
+android | android:id/aerr_wait | Wait | null
+android | null | null | null
+android | null | null | null
+android | android:id/content | null | null
+android | android:id/parentPanel | null | null
+android | android:id/topPanel | null | null
+android | android:id/title_template | null | null
+android | android:id/alertTitle | Pixel Launcher isn't responding | null
+android | android:id/customPanel | null | null
+android | android:id/custom | null | null
+android | null | null | null
+android | android:id/aerr_close | Close app | null
+android | android:id/aerr_wait | Wait | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.review(Max11DeviceTest.java:23)
+	at qa.max11.Max11DeviceTest.facebookDraft(Max11DeviceTest.java:26)
+	at qa.max11.Max11DeviceTest.testFinalConfirmationCommitsExactlyOnce(Max11DeviceTest.java:52)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:564)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2205)
+
+INSTRUMENTATION_STATUS: test=testFinalConfirmationCommitsExactlyOnce
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=.F
+Time: 55.449
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,23 @@
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+qa.max11.Max11VoiceTest:
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testUnsupportedArabicFallsBackAndRemainsUnsentDraft
+INSTRUMENTATION_STATUS: class=qa.max11.Max11VoiceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testUnsupportedArabicFallsBackAndRemainsUnsentDraft
+INSTRUMENTATION_STATUS: class=qa.max11.Max11VoiceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=.
+Time: 24.313
+
+OK (1 test)
+
+
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,5 @@
+<resources>
+    <item type="id" name="entry" />
+    <item type="id" name="search_src_text" />
+    <item type="id" name="conversation_contact_name" />
+</resources>

@@ -1,0 +1,9 @@
+{
+  "phase": "accepted",
+  "candidate_sha256": "1f984e82d88c049b390f2a82c122ab9e8f370049d325125bf80a3e38fa4698ae",
+  "accepted_scenarios": 15,
+  "old_version_seed": 1,
+  "receipt": "acceptance.json",
+  "nextAction": "Publish frozen APK/source and verify immutable public download",
+  "updated": "2026-11-11T09:42:32.405000+00:00"
+}

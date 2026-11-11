@@ -2,10 +2,10 @@
   "schema_version": 1,
   "run_id": "max-android-20261110",
   "goal": "Build Arabic Android AI assistant APK from Musabgpt/Max",
-  "status": "completed",
-  "phase": "NVIDIA410 fix delivered",
-  "last_verified_step": "1.0.1 prerelease published; pinned public APK matches signed update; key/memory preservation and20tests verified",
-  "next_action": "Deliver new APK link and instruct install-over-existing then retry. No operation pending.",
+  "status": "active",
+  "phase": "verified frozen1.1.0 candidate; publishing source/APK",
+  "last_verified_step": "69JVM,lint0errors12warnings,CI60b879 success;15distinct Android scenarios + old seed + visible unsent voice draft passed across API30/API26",
+  "next_action": "Commit and publish same-signer APK1f984e82 under immutable v1.1.0-preview.1; verify public byte count/SHA and release API",
   "active_operation": null,
   "changed_files": [],
   "checks": [
@@ -76,6 +76,22 @@
     {
       "command": "pinned1.0.1 raw APK download + release API",
       "result": "HTTP200;7200618bytes;SHA2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4;published prerelease"
+    },
+    {
+      "command": "max11-integrated-build.log + apksigner/zipalign + JUnitXML",
+      "result": "BUILD SUCCESSFUL;68tests0failures;lint0errors12warnings;same signer;version3,candidatec9f2b796"
+    },
+    {
+      "command": "max11-gpt-budget-red.log then max11-integrated-final-build.log",
+      "result": "New GPT4096 retry regression failed8192 expectation before fix; final69tests0failures/build/lint0errors12warnings passed."
+    },
+    {
+      "command": "API30 partial + API26 controlled device run",
+      "result": "Same finalAPK1f984e82: upgrade/actual calculator/main command/sandbox4 pass; seven actual device cases pass. Four later cases blocked by stale PIN bouncer after credential cleanup; QA harness fixed and only those four rerun."
+    },
+    {
+      "command": "acceptance.json + run-voice-visible-red/instrumentation.txt",
+      "result": "15distinct scenarios accepted plus old seed; speech serviceerror12 -> real Activity result -> visible unsentArabicdraft; no product source changes after60b879."
     }
   ],
   "decisions": [
@@ -87,17 +103,18 @@
     "Reuse accepted baseline/native evidence. Rebuild required because final insets edit was not compiled before interruption. Repair deterministic QA fixture: AOSP WebView Shell exists but crashes without provider; temporarily disable it only on disposable emulator for no-browser branch.",
     "Final QA-only evidence commit skips duplicate CI; app/build source exactly matches accepted CI commit dee44ee. No production change after frozen APK46fd8641.",
     "Replace deprecated built-in default with auto selection from live NVIDIA catalog; retry only unavailable404/410, keep authentication/quota errors distinct, never request user key in chat.",
-    "Ship1.0.1 as signed in-place update; preserve existing encrypted secret/SQLite files and choose models automatically from NVIDIA. Authenticated user-key inference remains on user device."
+    "Ship1.0.1 as signed in-place update; preserve existing encrypted secret/SQLite files and choose models automatically from NVIDIA. Authenticated user-key inference remains on user device.",
+    "Use dispatching-parallel-agents for separate device-control, HTML/artifacts and QA/environment domains; root owns integration/voice/provider output. User original goal authorizes reversible implementation without another design approval pause."
   ],
   "blockers": [],
   "unverified_claims": [],
   "git": {
     "root": "/workspace/Max",
-    "HEAD": "3c01a4f684d2f9f3d75757740c50d020ad578ecd",
+    "HEAD": "f6754d6facb9b5795a4e24ff81f06f9f02faddcf",
     "branch": "feature/max-assistant",
     "dirty_paths": []
   },
-  "updated_at": "2026-11-11T00:56:58.825923+00:00",
+  "updated_at": "2026-11-11T09:49:14.327419+00:00",
   "delivery": {
     "version": "1.0.1",
     "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.1-preview.1",
@@ -108,19 +125,126 @@
     "scope": "NVIDIA410 recovery and credential-preserving APK update"
   },
   "remaining_limitations": [
-    "Permissions must be enabled by the user; no keyguard bypass or powered-off operation",
-    "Inbox captures new opted-in notifications, not full email/WhatsApp history",
-    "Booking is search and provider checkout with user review",
-    "NVIDIA authenticated calls/live accounts/physical ARM64/full Android local inference not exercised; host actual generation and Android native smoke passed",
-    "Normal WebView pages/forms require a provider and were not exercised on the provider-less emulator"
+    "Android permissions require user enablement; UI automation stops when locked and cannot run on a powered-off phone",
+    "Inbox captures opted-in new notifications, not full mail/WhatsApp history; booking remains provider search/checkout with user review",
+    "Real Facebook/WhatsApp account delivery, authenticated NVIDIA quota, microphone hardware and physical ARM64 were not tested",
+    "Local HTML actual WebView/JS and rejection assertions passed; independent full-run host observer archive unavailable after interrupted API30 run",
+    "Live app UI variation may require opening the composer or contact manually; scheduled jobs follow Android battery limits"
   ],
-  "current_issue": "User screenshot: NVIDIA chat HTTP410. Public NVIDIA model metadata confirms default meta/llama-3.1-8b-instruct retired 2026-08-26.",
+  "current_issue": "Screenshots show blanket text-only replies to Facebook/WhatsApp tasks, literal null, no HTML execution and speech12.",
   "previous_delivery": {
-    "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.0-preview.2",
-    "apk_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.0.0-preview.2/apk/MaxAssistant-v1.apk",
-    "sha256": "46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d",
-    "source_commit": "7c7cf3c4758b0ba2cc3731df667e77f44159c343",
-    "bytes": 9537954,
-    "scope": "Verified first preview with documented Android/platform/account limits"
+    "version": "1.0.1",
+    "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.1-preview.1",
+    "apk_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.0.1-preview.1/apk/MaxAssistant-v1.apk",
+    "sha256": "2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4",
+    "bytes": 7200618,
+    "source_commit": "3c01a4f684d2f9f3d75757740c50d020ad578ecd",
+    "scope": "NVIDIA410 recovery and credential-preserving APK update"
+  },
+  "candidate": {
+    "version": "1.1.0",
+    "version_code": 3,
+    "verified_at": "2026-11-11T09:42:32.405000+00:00",
+    "artifact": "apk/MaxAssistant-v1.apk",
+    "bytes": 7285904,
+    "sha256": "1f984e82d88c049b390f2a82c122ab9e8f370049d325125bf80a3e38fa4698ae",
+    "minSdk": 26,
+    "targetSdk": 35,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "tests": {
+      "com.maxassistant.app.preview.HtmlDocumentsTest": {
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.ai.TaskIntentTest": {
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.ai.ReplyTextTest": {
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.voice.SpeechPolicyTest": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.automation.DeviceTaskParserTest": {
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.preview.HtmlArtifactStoreTest": {
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.automation.DevicePlanTest": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.ai.CommandRouterTest": {
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.ai.NvidiaClientTest": {
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "com.maxassistant.app.automation.CommitGuardTest": {
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "signature": "apksigner v2 verified; same certificate as1.0.1",
+    "signer_sha256": "f646305489684b9f2647dbe5ad5336bf8a3a21ff7a3c939eb5e936cc3df2e418",
+    "native_alignment": "zipalign -c -P16 4 passed on final APK1f984e82",
+    "native_libraries_unchanged": 4,
+    "lint": {
+      "Error": 0,
+      "Warning": 12
+    },
+    "android_acceptance": {
+      "status": "passed_with_documented_environment_repairs",
+      "total_checks": 16,
+      "distinct_scenarios": 15,
+      "old_version_seed": 1,
+      "receipt": "docs/qa/max11/acceptance.json",
+      "real_webview_calculator": "2+3*4=14, including main chat command without model",
+      "encrypted_key_memory_chat_upgrade": "passed from version2/schema1 to version3/schema2",
+      "reviewed_device_cases": 10,
+      "speech_error12": "passed: service error12 -> system Activity -> unsent Arabic draft",
+      "scope": "Official emulators and local no-network social/speech fixtures; live account behavior untested",
+      "network_validation_limit": "HTML sandbox DOM/settings rejection checks passed; API30 full-run host observer archive unavailable after interruption"
+    },
+    "github_ci": {
+      "run": 42990091051,
+      "commit": "60b879abb4f34a610e988a7c1e113aacf12995fd",
+      "conclusion": "success",
+      "url": "https://github.com/Musabgpt/Max/actions/runs/42990091051",
+      "release_app_source_matches": true
+    },
+    "app_source_commit": "60b879abb4f34a610e988a7c1e113aacf12995fd",
+    "app_tree": "c00adb33ae202a610aebe4b98f6b683eaee9f29c"
   }
 }

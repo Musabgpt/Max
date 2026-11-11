@@ -1,0 +1,1815 @@
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+qa.max11.Max11DeviceTest:
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testCancelPreparedDraftNeverCommits
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testCancelPreparedDraftNeverCommits
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testChangedWhatsAppRecipientIsRejected
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testChangedWhatsAppRecipientIsRejected
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testEditedDraftIsRejectedAtFinalConfirmation
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testEditedDraftIsRejectedAtFinalConfirmation
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testFinalConfirmationCommitsExactlyOnce
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testFinalConfirmationCommitsExactlyOnce
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testHomeCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testHomeCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testInitialReviewCancellationDoesNotLaunchOrCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testInitialReviewCancellationDoesNotLaunchOrCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testLockedDeviceCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testLockedDeviceCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testScreenshotCommandRoutesFromChatWithoutModel
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+Failure in testScreenshotCommandRoutesFromChatWithoutModel:
+junit.framework.AssertionFailedError: Screenshot command opens concrete review without a downloaded model; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:31 | 9:31
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:31 | 9:31
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.testScreenshotCommandRoutesFromChatWithoutModel(Max11DeviceTest.java:46)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testScreenshotCommandRoutesFromChatWithoutModel
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: stack=junit.framework.AssertionFailedError: Screenshot command opens concrete review without a downloaded model; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:31 | 9:31
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:31 | 9:31
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.testScreenshotCommandRoutesFromChatWithoutModel(Max11DeviceTest.java:46)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWhatsAppRecipientAndExplicitSingleCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+Failure in testWhatsAppRecipientAndExplicitSingleCommit:
+junit.framework.AssertionFailedError: Concrete plan review is visible; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.review(Max11DeviceTest.java:23)
+	at qa.max11.Max11DeviceTest.testWhatsAppRecipientAndExplicitSingleCommit(Max11DeviceTest.java:101)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWhatsAppRecipientAndExplicitSingleCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: stack=junit.framework.AssertionFailedError: Concrete plan review is visible; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.review(Max11DeviceTest.java:23)
+	at qa.max11.Max11DeviceTest.testWhatsAppRecipientAndExplicitSingleCommit(Max11DeviceTest.java:101)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWrongForegroundAppCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+Failure in testWrongForegroundAppCancelsPreparedCommit:
+junit.framework.AssertionFailedError: Concrete plan review is visible; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.review(Max11DeviceTest.java:23)
+	at qa.max11.Max11DeviceTest.facebookDraft(Max11DeviceTest.java:26)
+	at qa.max11.Max11DeviceTest.testWrongForegroundAppCancelsPreparedCommit(Max11DeviceTest.java:75)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testWrongForegroundAppCancelsPreparedCommit
+INSTRUMENTATION_STATUS: class=qa.max11.Max11DeviceTest
+INSTRUMENTATION_STATUS: stack=junit.framework.AssertionFailedError: Concrete plan review is visible; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11DeviceTest.review(Max11DeviceTest.java:23)
+	at qa.max11.Max11DeviceTest.facebookDraft(Max11DeviceTest.java:26)
+	at qa.max11.Max11DeviceTest.testWrongForegroundAppCancelsPreparedCommit(Max11DeviceTest.java:75)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+qa.max11.Max11VoiceTest:
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testUnsupportedArabicFallsBackAndRemainsUnsentDraft
+INSTRUMENTATION_STATUS: class=qa.max11.Max11VoiceTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+Failure in testUnsupportedArabicFallsBackAndRemainsUnsentDraft:
+junit.framework.AssertionFailedError: Unsupported-language provider invoked; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11VoiceTest.testUnsupportedArabicFallsBackAndRemainsUnsentDraft(Max11VoiceTest.java:21)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: test=testUnsupportedArabicFallsBackAndRemainsUnsentDraft
+INSTRUMENTATION_STATUS: class=qa.max11.Max11VoiceTest
+INSTRUMENTATION_STATUS: stack=junit.framework.AssertionFailedError: Unsupported-language provider invoked; current UI:
+com.android.systemui | com.android.systemui:id/navigation_bar_frame | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/navigation_inflater | null | null
+com.android.systemui | com.android.systemui:id/rot0 | null | null
+com.android.systemui | com.android.systemui:id/deadzone | null | null
+com.android.systemui | com.android.systemui:id/nav_buttons | null | null
+com.android.systemui | com.android.systemui:id/center_group | null | null
+com.android.systemui | com.android.systemui:id/ends_group | null | null
+com.android.systemui | com.android.systemui:id/back | null | Back
+com.android.systemui | null | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+com.android.systemui | com.android.systemui:id/key9 | null | 9
+com.android.systemui | com.android.systemui:id/klondike_text | WXYZ | null
+com.android.systemui | com.android.systemui:id/digit_text | 9 | null
+com.android.systemui | com.android.systemui:id/row4 | null | null
+com.android.systemui | com.android.systemui:id/key0 | null | 0
+com.android.systemui | com.android.systemui:id/digit_text | 0 | null
+com.android.systemui | com.android.systemui:id/klondike_text | + | null
+com.android.systemui | com.android.systemui:id/key_enter | null | Enter
+com.android.systemui | com.android.systemui:id/keyguard_selector_fade_container | null | null
+com.android.systemui | com.android.systemui:id/emergency_call_button | EMERGENCY | null
+com.android.systemui | com.android.systemui:id/status_bar_container | null | null
+com.android.systemui | com.android.systemui:id/status_bar | null | null
+com.android.systemui | com.android.systemui:id/status_bar_contents | null | null
+com.android.systemui | com.android.systemui:id/notification_icon_area | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/scrim_behind | null | null
+com.android.systemui | com.android.systemui:id/notification_panel | null | null
+com.android.systemui | com.android.systemui:id/notification_container_parent | null | null
+com.android.systemui | com.android.systemui:id/qs_frame | null | null
+com.android.systemui | com.android.systemui:id/notification_stack_scroller | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/backgroundDimmed | null | null
+com.android.systemui | com.android.systemui:id/expanded | null | null
+com.android.systemui | android:id/status_bar_latest_event_content | null | null
+com.android.systemui | android:id/notification_header | null | null
+com.android.systemui | android:id/icon | null | null
+com.android.systemui | android:id/app_name_text | Android System | null
+com.android.systemui | android:id/notification_main_column | null | null
+com.android.systemui | android:id/line1 | null | null
+com.android.systemui | android:id/title | USB debugging connected | null
+com.android.systemui | android:id/text | Tap to disable USB debugging. | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/content | null | null
+com.android.systemui | com.android.systemui:id/fake_shadow | null | null
+com.android.systemui | com.android.systemui:id/keyguard_header | null | null
+com.android.systemui | com.android.systemui:id/keyguard_carrier_text | Android | null
+com.android.systemui | com.android.systemui:id/system_icons_super_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons_container | null | null
+com.android.systemui | com.android.systemui:id/system_icons | null | null
+com.android.systemui | com.android.systemui:id/signal_cluster | null | null
+com.android.systemui | com.android.systemui:id/wifi_combo | null | Wifi signal full.,No internet.
+com.android.systemui | com.android.systemui:id/wifi_signal | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal_group | null | null
+com.android.systemui | com.android.systemui:id/mobile_combo | null | LTE Phone two bars.
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/mobile_signal | null | null
+com.android.systemui | com.android.systemui:id/battery | null | Battery charging, 100 percent.
+com.android.systemui | com.android.systemui:id/battery_percentage_view | 100% | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_bottom_area | null | null
+com.android.systemui | com.android.systemui:id/preview_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_area | null | null
+com.android.systemui | com.android.systemui:id/keyguard_indication_text | Charged | null
+com.android.systemui | com.android.systemui:id/left_button | null | Phone
+com.android.systemui | com.android.systemui:id/lock_icon | null | Unlock
+com.android.systemui | com.android.systemui:id/camera_button | null | Camera
+com.android.systemui | com.android.systemui:id/keyguard_status_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_clock_container | null | null
+com.android.systemui | com.android.systemui:id/keyguard_status_area | null | null
+com.android.systemui | com.android.systemui:id/date_view | Wednesday, November 11 | null
+com.android.systemui | com.android.systemui:id/clock_view | 9:32 | 9:32
+com.android.systemui | com.android.systemui:id/scrim_in_front | null | null
+com.android.systemui | null | null | null
+com.android.systemui | com.android.systemui:id/keyguard_host_view | null | null
+com.android.systemui | com.android.systemui:id/keyguard_security_container | null | null
+com.android.systemui | com.android.systemui:id/view_flipper | null | null
+com.android.systemui | com.android.systemui:id/keyguard_pin_view | null | null
+com.android.systemui | com.android.systemui:id/container | null | null
+com.android.systemui | com.android.systemui:id/row0 | null | null
+com.android.systemui | com.android.systemui:id/divider | null | null
+com.android.systemui | com.android.systemui:id/pinEntry | null | PIN area
+com.android.systemui | com.android.systemui:id/delete_button | null | Delete
+com.android.systemui | com.android.systemui:id/row1 | null | null
+com.android.systemui | com.android.systemui:id/key1 | null | 1
+com.android.systemui | com.android.systemui:id/digit_text | 1 | null
+com.android.systemui | com.android.systemui:id/key2 | null | 2
+com.android.systemui | com.android.systemui:id/klondike_text | ABC | null
+com.android.systemui | com.android.systemui:id/digit_text | 2 | null
+com.android.systemui | com.android.systemui:id/key3 | null | 3
+com.android.systemui | com.android.systemui:id/klondike_text | DEF | null
+com.android.systemui | com.android.systemui:id/digit_text | 3 | null
+com.android.systemui | com.android.systemui:id/row2 | null | null
+com.android.systemui | com.android.systemui:id/key4 | null | 4
+com.android.systemui | com.android.systemui:id/digit_text | 4 | null
+com.android.systemui | com.android.systemui:id/klondike_text | GHI | null
+com.android.systemui | com.android.systemui:id/key5 | null | 5
+com.android.systemui | com.android.systemui:id/digit_text | 5 | null
+com.android.systemui | com.android.systemui:id/klondike_text | JKL | null
+com.android.systemui | com.android.systemui:id/key6 | null | 6
+com.android.systemui | com.android.systemui:id/klondike_text | MNO | null
+com.android.systemui | com.android.systemui:id/digit_text | 6 | null
+com.android.systemui | com.android.systemui:id/row3 | null | null
+com.android.systemui | com.android.systemui:id/key7 | null | 7
+com.android.systemui | com.android.systemui:id/klondike_text | PQRS | null
+com.android.systemui | com.android.systemui:id/digit_text | 7 | null
+com.android.systemui | com.android.systemui:id/key8 | null | 8
+com.android.systemui | com.android.systemui:id/klondike_text | TUV | null
+com.android.systemui | com.android.systemui:id/digit_text | 8 | null
+
+	at qa.max11.Max11UiBase.await(Max11UiBase.java:54)
+	at qa.max11.Max11VoiceTest.testUnsupportedArabicFallsBackAndRemainsUnsentDraft(Max11VoiceTest.java:21)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:198)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:183)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:560)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2074)
+
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=........F.F.F.F
+Time: 256.938
+
+FAILURES!!!
+Tests run: 11,  Failures: 4,  Errors: 0
+
+
+INSTRUMENTATION_CODE: -1
