@@ -57,6 +57,11 @@ public final class BrowserActivity extends Activity {
         page.setOrientation(LinearLayout.VERTICAL);
         page.setBackgroundColor(Color.rgb(14, 20, 31));
         page.setPadding(10, 10, 10, 4);
+        page.setOnApplyWindowInsetsListener((view, insets) -> {
+            view.setPadding(10 + insets.getSystemWindowInsetLeft(), 10 + insets.getSystemWindowInsetTop(),
+                10 + insets.getSystemWindowInsetRight(), 4 + insets.getSystemWindowInsetBottom());
+            return insets;
+        });
         LinearLayout toolbar = new LinearLayout(this);
         address = new EditText(this);
         address.setSingleLine(true);
@@ -75,18 +80,27 @@ public final class BrowserActivity extends Activity {
         status = new TextView(this); status.setTextColor(Color.LTGRAY); status.setTextSize(12);
         status.setText("راجع الحجز والدفع والإرسال بنفسك. لا تُقرأ حقول كلمات المرور أو الدفع.");
         page.addView(status);
-        web = new WebView(this);
-        WebSettings settings = web.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDomStorageEnabled(true);
-        settings.setAllowFileAccess(false);
-        settings.setAllowContentAccess(false);
-        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
-        settings.setJavaScriptCanOpenWindowsAutomatically(false);
-        settings.setSupportMultipleWindows(false);
-        settings.setMediaPlaybackRequiresUserGesture(true);
-        settings.setSafeBrowsingEnabled(true);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(web, false);
+        // Provider availability differs by device. Keep the catch confined to provider initialization.
+        try {
+            web = new WebView(this);
+            WebSettings settings = web.getSettings();
+            settings.setJavaScriptEnabled(true);
+            settings.setDomStorageEnabled(true);
+            settings.setAllowFileAccess(false);
+            settings.setAllowContentAccess(false);
+            settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+            settings.setJavaScriptCanOpenWindowsAutomatically(false);
+            settings.setSupportMultipleWindows(false);
+            settings.setMediaPlaybackRequiresUserGesture(true);
+            settings.setSafeBrowsingEnabled(true);
+            CookieManager.getInstance().setAcceptThirdPartyCookies(web, false);
+        } catch (RuntimeException | LinkageError providerUnavailable) {
+            if (web != null) {
+                try { web.destroy(); } catch (RuntimeException | LinkageError cleanupError) { /* Partially initialized provider. */ }
+            }
+            web = null;
+        }
+        if (web != null) {
         web.setWebChromeClient(new WebChromeClient() {
             @Override public void onProgressChanged(WebView view, int progress) { if (progress < 100) status.setText("تحميل الصفحة · " + progress + "%"); }
         });
@@ -105,17 +119,40 @@ public final class BrowserActivity extends Activity {
             }
         });
         page.addView(web, new LinearLayout.LayoutParams(-1, 0, 1));
+        } else {
+            status.setText("المتصفح الداخلي غير متاح على هذا الجهاز.");
+            TextView guidance = new TextView(this);
+            guidance.setTextColor(Color.WHITE);
+            guidance.setTextSize(18);
+            guidance.setPadding(20, 32, 20, 20);
+            guidance.setText("ثبّت أو فعّل Android System WebView أو Chrome المدعوم من متجر هاتفك، ثم افتح الصفحة مجددًا.\n\nيمكنك فتح الرابط في متصفح خارجي إذا كان مثبتًا. تعبئة النماذج داخل MAX تحتاج إلى WebView.");
+            page.addView(guidance, new LinearLayout.LayoutParams(-1, 0, 1));
+            fill.setEnabled(false);
+            go.setText("افتح خارجيًا");
+        }
         setContentView(page);
-        go.setOnClickListener(v -> navigate(address.getText().toString()));
-        address.setOnEditorActionListener((v, action, event) -> { navigate(address.getText().toString()); return true; });
-        back.setOnClickListener(v -> { if (web.canGoBack()) web.goBack(); else finish(); });
+        page.requestApplyInsets();
+        go.setOnClickListener(v -> { if (web == null) openExternal(); else navigate(address.getText().toString()); });
+        address.setOnEditorActionListener((v, action, event) -> { if (web == null) openExternal(); else navigate(address.getText().toString()); return true; });
+        back.setOnClickListener(v -> { if (web != null && web.canGoBack()) web.goBack(); else finish(); });
         fill.setOnClickListener(v -> showFields());
-        external.setOnClickListener(v -> {
-            try { startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(normalize(web.getUrl())))); }
-            catch (Exception error) { toast("لا يوجد متصفح خارجي متاح."); }
-        });
-        if (state != null) web.restoreState(state);
-        else navigate(getIntent().getStringExtra("url"));
+        external.setOnClickListener(v -> openExternal());
+        String requestedUrl = state == null ? getIntent().getStringExtra("url") : state.getString("fallback_url", getIntent().getStringExtra("url"));
+        if (web != null) {
+            if (state == null || web.restoreState(state) == null) navigate(requestedUrl);
+        } else {
+            try { address.setText(normalize(requestedUrl)); }
+            catch (IllegalArgumentException invalid) { address.setText("https://www.google.com"); toast(invalid.getMessage()); }
+        }
+    }
+
+    private void openExternal() {
+        try {
+            String url = normalize(address.getText().toString());
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        } catch (IllegalArgumentException invalid) { toast(invalid.getMessage()); }
+        catch (android.content.ActivityNotFoundException noBrowser) { toast("لا يوجد متصفح خارجي مثبت. ثبّت متصفحًا أو فعّل Android System WebView ثم حاول مجددًا."); }
+        catch (SecurityException blocked) { toast("منع Android فتح المتصفح الخارجي. افتح الرابط يدويًا في متصفحك."); }
     }
 
     private void navigate(String url) {
@@ -156,7 +193,7 @@ public final class BrowserActivity extends Activity {
 
     private void toast(String text) { Toast.makeText(this, text, Toast.LENGTH_LONG).show(); }
     @Override public void onBackPressed() { if (web != null && web.canGoBack()) web.goBack(); else super.onBackPressed(); }
-    @Override protected void onSaveInstanceState(Bundle out) { super.onSaveInstanceState(out); web.saveState(out); }
+    @Override protected void onSaveInstanceState(Bundle out) { super.onSaveInstanceState(out); out.putString("fallback_url", address.getText().toString()); if (web != null) web.saveState(out); }
     @Override protected void onPause() { if (web != null) web.onPause(); super.onPause(); }
     @Override protected void onResume() { super.onResume(); if (web != null) web.onResume(); }
     @Override protected void onDestroy() { if (web != null) { web.stopLoading(); web.destroy(); } super.onDestroy(); }

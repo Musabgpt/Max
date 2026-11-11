@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "artifact": "app/build/outputs/apk/debug/app-debug.apk",
   "bytes": 9537954,
-  "sha256": "d1c0e5ff1fbfc19d346485b28337d28c838714983b1a3f781ad0789f483a2353",
+  "sha256": "46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d",
   "minSdk": 26,
   "targetSdk": 35,
   "abis": [
@@ -17,10 +17,13 @@
   },
   "lint": {
     "errors": 0,
-    "warnings": 7
+    "warnings": 8
   },
-  "signature": "apksigner v2 verified by build_tooling; see build log",
-  "native_alignment": "zipalign -c -P 16 successful",
+  "signature": "Final APK apksigner v2 verification passed",
+  "native_alignment": "Final APK zipalign -c -P16 passed",
   "provider_nvidia": "not tested without a user API key",
-  "model_runtime": "actual same-source host JNI generation passed; not a phone benchmark"
+  "model_runtime": "actual same-source host JNI generation passed; not a phone benchmark",
+  "browser_regression": "Final browser fallback plus insets correction compiled; focused current-APK regression running",
+  "unchanged_native_libraries_vs_prior_apk": 4,
+  "github_ci": "Source93e340f passed run42885463647; browser-fix code awaiting fresh CI after push"
 }
