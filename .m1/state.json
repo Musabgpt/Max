@@ -2,11 +2,16 @@
   "schema_version": 1,
   "run_id": "max-android-20261110",
   "goal": "Build Arabic Android AI assistant APK from Musabgpt/Max",
-  "status": "completed",
-  "phase": "delivered verified Android preview",
-  "last_verified_step": "Prerelease published; immutable public APK download returned200 and matched final signed APK",
-  "next_action": "Deliver permanent APK and repository links to the user. No pending operation.",
-  "active_operation": null,
+  "status": "active",
+  "phase": "publish verified1.0.1 NVIDIA fix",
+  "last_verified_step": "20JVM tests, lint/build,3Android upgrade/JSON checks and settings UI passed; final source CI42934336266 success",
+  "next_action": "Create tag/release v1.0.1-preview.1, verify pinned APK hash, deliver update link",
+  "active_operation": {
+    "id": "publish-nvidia-fix-v101",
+    "tag": "v1.0.1-preview.1",
+    "artifact_sha256": "2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4",
+    "completion_signal": "Published prerelease and pinned public APK digest matches"
+  },
   "changed_files": [],
   "checks": [
     {
@@ -52,6 +57,26 @@
     {
       "command": "immutable tag APK public download + release API",
       "result": "HTTP200;SHA46fd8641…;9537954bytes;release published as prerelease"
+    },
+    {
+      "command": "nvidia-test-red.log then nvidia-test-green.log",
+      "result": "12new regression tests red then green;20total JVM tests pass"
+    },
+    {
+      "command": "nvidia-v101-build.log + signing/zipalign",
+      "result": "BUILD SUCCESSFUL;lint0errors8warnings;versionCode2;same signer as old APK;SHA2d70d15b…"
+    },
+    {
+      "command": "Framework Instrumentation upgrade seed/verify",
+      "result": "1seed +2verify tests passed; real encrypted key and memory survived install-r; Android JSON410 recovery passed"
+    },
+    {
+      "command": "nvidia-v101-ui.log",
+      "result": "auto shown for old saved default; key remains undisclosed; no fatal crash"
+    },
+    {
+      "command": "GitHub Actions42934336266",
+      "result": "success;release application source matches8d1e89d"
     }
   ],
   "decisions": [
@@ -61,17 +86,19 @@
     "Independent review fixed drafts, work defaults, target screen, browser form identity; scope native cancellation by request owner",
     "GitHub uploads.github.com asset upload returned401; do not repeat. Deliver APK through repository raw URL and a text release, no user credentials requested.",
     "Reuse accepted baseline/native evidence. Rebuild required because final insets edit was not compiled before interruption. Repair deterministic QA fixture: AOSP WebView Shell exists but crashes without provider; temporarily disable it only on disposable emulator for no-browser branch.",
-    "Final QA-only evidence commit skips duplicate CI; app/build source exactly matches accepted CI commit dee44ee. No production change after frozen APK46fd8641."
+    "Final QA-only evidence commit skips duplicate CI; app/build source exactly matches accepted CI commit dee44ee. No production change after frozen APK46fd8641.",
+    "Replace deprecated built-in default with auto selection from live NVIDIA catalog; retry only unavailable404/410, keep authentication/quota errors distinct, never request user key in chat.",
+    "Ship1.0.1 as signed in-place update; preserve existing encrypted secret/SQLite files and choose models automatically from NVIDIA. Authenticated user-key inference remains on user device."
   ],
   "blockers": [],
   "unverified_claims": [],
   "git": {
     "root": "/workspace/Max",
-    "HEAD": "7c7cf3c4758b0ba2cc3731df667e77f44159c343",
+    "HEAD": "ca80b88ba7bb3f9afb5563007677201bbadd7e83",
     "branch": "feature/max-assistant",
     "dirty_paths": []
   },
-  "updated_at": "2026-11-11T00:15:23.708395+00:00",
+  "updated_at": "2026-11-11T00:54:37.576257+00:00",
   "delivery": {
     "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.0-preview.2",
     "apk_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.0.0-preview.2/apk/MaxAssistant-v1.apk",
@@ -86,5 +113,14 @@
     "Booking is search and provider checkout with user review",
     "NVIDIA authenticated calls/live accounts/physical ARM64/full Android local inference not exercised; host actual generation and Android native smoke passed",
     "Normal WebView pages/forms require a provider and were not exercised on the provider-less emulator"
-  ]
+  ],
+  "current_issue": "User screenshot: NVIDIA chat HTTP410. Public NVIDIA model metadata confirms default meta/llama-3.1-8b-instruct retired 2026-08-26.",
+  "previous_delivery": {
+    "release_url": "https://github.com/Musabgpt/Max/releases/tag/v1.0.0-preview.2",
+    "apk_url": "https://raw.githubusercontent.com/Musabgpt/Max/v1.0.0-preview.2/apk/MaxAssistant-v1.apk",
+    "sha256": "46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d",
+    "source_commit": "7c7cf3c4758b0ba2cc3731df667e77f44159c343",
+    "bytes": 9537954,
+    "scope": "Verified first preview with documented Android/platform/account limits"
+  }
 }

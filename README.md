@@ -6,7 +6,7 @@
 **هذه نسخة أولى قابلة للتثبيت، وليست نظامًا يملك جميع صلاحيات الهاتف تلقائيًا.**
 Android يتطلب موافقة المستخدم، ولا يسمح للتطبيق بتجاوز قفل الشاشة.
 
-**[⬇ تحميل APK التجريبي (9.5 MB)](https://github.com/Musabgpt/Max/raw/refs/heads/main/apk/MaxAssistant-v1.apk)** ·
+**[⬇ تحميل APK التجريبي 1.0.1 (7.2 MB)](https://github.com/Musabgpt/Max/raw/refs/heads/main/apk/MaxAssistant-v1.apk)** ·
 [نتائج التحقق](docs/qa/build-verification.json) · [SHA256](apk/SHA256SUMS.txt)
 
 ## تحديث 1.0.1 — إصلاح NVIDIA 410

@@ -31,13 +31,20 @@
     "saved_encrypted_key_preserved": true,
     "local_memory_preserved": true,
     "same_signing_cert": "f646305489684b9f2647dbe5ad5336bf8a3a21ff7a3c939eb5e936cc3df2e418",
-    "android_json_410_recovery": "passed with deterministic transport"
+    "android_json_410_recovery": "passed with deterministic transport",
+    "settings_ui": "passed: auto shown; saved key not displayed; no final crash"
   },
   "native_libraries_unchanged": 4,
   "nvidia_live_probe": "Retired model metadata410; current public catalog200 and preferred model metadata200; no authenticated inference tested",
   "signature": "apksigner verified",
   "native_alignment": "zipalign -c -P16 passed",
-  "github_ci": "pending new source push",
+  "github_ci": {
+    "run": 42934336266,
+    "commit": "8d1e89d11955d9a76b24e825f221e796b5e8707b",
+    "conclusion": "success",
+    "url": "https://github.com/Musabgpt/Max/actions/runs/42934336266",
+    "release_app_source_matches": true
+  },
   "lint": {
     "Error": 0,
     "Warning": 8

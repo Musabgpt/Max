@@ -26,3 +26,8 @@ as application runtime code. Android C++ runtime follows its NDK license notices
 
 NVIDIA service access is optional and subject to the user's account, chosen model,
 quota, availability and provider terms. No NVIDIA credentials are distributed.
+
+## JSON-java test dependency
+
+`org.json:json:20240303` is used only by JVM regression tests. It is not packaged
+in the Android application; runtime JSON is supplied by the Android framework.
