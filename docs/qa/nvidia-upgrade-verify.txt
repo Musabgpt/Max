@@ -1,0 +1,8 @@
+
+com.maxassistant.app.upgradetest.NvidiaUpgradeVerifyTest:..
+Test results for InstrumentationTestRunner=..
+Time: 0.286
+
+OK (2 tests)
+
+

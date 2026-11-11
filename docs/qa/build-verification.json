@@ -1,8 +1,10 @@
 {
-  "date": "2026-11-11",
-  "artifact": "app/build/outputs/apk/debug/app-debug.apk",
-  "bytes": 9537954,
-  "sha256": "46fd8641a66e1411734dab7e5fedf440110a407361e83072637841f4dbb22a6d",
+  "version": "1.0.1",
+  "version_code": 2,
+  "verified_at": "2026-11-11T00:49:16.745876+00:00",
+  "artifact": "apk/MaxAssistant-v1.apk",
+  "bytes": 7200618,
+  "sha256": "2d70d15b1d744c846de76790335826de8a48ac83b70775ef08bc8fabde23d1a4",
   "minSdk": 26,
   "targetSdk": 35,
   "abis": [
@@ -10,36 +12,34 @@
     "x86_64"
   ],
   "tests": {
-    "tests": "8",
-    "failures": "0",
-    "errors": "0",
-    "skipped": "0"
+    "com.maxassistant.app.ai.CommandRouterTest": {
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    "com.maxassistant.app.ai.NvidiaClientTest": {
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
   },
+  "android_upgrade": {
+    "seed_on_v1": "1/1 passed",
+    "verify_on_v2": "2/2 passed",
+    "saved_encrypted_key_preserved": true,
+    "local_memory_preserved": true,
+    "same_signing_cert": "f646305489684b9f2647dbe5ad5336bf8a3a21ff7a3c939eb5e936cc3df2e418",
+    "android_json_410_recovery": "passed with deterministic transport"
+  },
+  "native_libraries_unchanged": 4,
+  "nvidia_live_probe": "Retired model metadata410; current public catalog200 and preferred model metadata200; no authenticated inference tested",
+  "signature": "apksigner verified",
+  "native_alignment": "zipalign -c -P16 passed",
+  "github_ci": "pending new source push",
   "lint": {
-    "errors": 0,
-    "warnings": 8
-  },
-  "signature": "Final APK apksigner v2 verification passed",
-  "native_alignment": "Final APK zipalign -c -P16 passed",
-  "provider_nvidia": "not tested without a user API key",
-  "model_runtime": "actual same-source host JNI generation passed; not a phone benchmark",
-  "browser_regression": "PASS: final installed APK fallback, absent external browser, rotation/URL restoration, Back, empty crash buffer",
-  "unchanged_native_libraries_vs_prior_apk": 4,
-  "github_ci": {
-    "run": 42928447171,
-    "commit": "dee44ee6575b257b5182844c166531c1f7878fa8",
-    "url": "https://github.com/Musabgpt/Max/actions/runs/42928447171",
-    "conclusion": "success",
-    "app_tree": "c23c18d1f4914e1e62cff13e81f629582d6c047c",
-    "release_app_source_matches": true
-  },
-  "emulator": {
-    "api": 26,
-    "abi": "x86_64",
-    "accepted_checks": 13,
-    "all_passed": true,
-    "baseline": "9 prior MainActivity/background checks reused; unchanged code",
-    "final_browser_checks": "4 targeted checks on installed final APK46fd8641…"
-  },
-  "verified_at": "2026-11-11T00:14:09.586359+00:00"
+    "Error": 0,
+    "Warning": 8
+  }
 }

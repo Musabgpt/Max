@@ -1,0 +1,8 @@
+
+com.maxassistant.app.upgradetest.NvidiaUpgradeSeedTest:.
+Test results for InstrumentationTestRunner=.
+Time: 0.442
+
+OK (1 test)
+
+

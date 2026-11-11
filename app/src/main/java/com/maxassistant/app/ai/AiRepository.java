@@ -3,26 +3,20 @@ package com.maxassistant.app.ai;
 import android.content.Context;
 import com.maxassistant.app.data.AppStore;
 import com.maxassistant.app.data.SecureSecrets;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
-import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /** Text generation only. Model output never executes device actions. */
 public final class AiRepository {
-    public static final String DEFAULT_NVIDIA_MODEL="meta/llama-3.1-8b-instruct";
+    public static final String DEFAULT_NVIDIA_MODEL=NvidiaClient.AUTO_MODEL;
     private static final Object LOCAL_LOCK=new Object();
     private static AiRepository localOwner;
     private final Context context;
     private final AppStore store;
     private volatile boolean cancelled;
-    private volatile HttpsURLConnection activeConnection;
+    private volatile NvidiaClient activeNvidia;
     public AiRepository(Context context){this.context=context.getApplicationContext();this.store=new AppStore(context);}
     public String reply(String userMessage) throws Exception {
         try{
@@ -37,7 +31,7 @@ public final class AiRepository {
     public void cancel(){
         cancelled=true;
         synchronized(LOCAL_LOCK){if(localOwner==this){try{LocalLlama.cancel();}catch(LinkageError ignored){}}}
-        HttpsURLConnection connection=activeConnection;if(connection!=null)connection.disconnect();
+        NvidiaClient client=activeNvidia;if(client!=null)client.cancel();
     }
     private void checkCancelled() throws IOException {if(cancelled||Thread.currentThread().isInterrupted())throw new IOException("تم إيقاف الطلب");}
     private String system(boolean includeMemory){
@@ -72,18 +66,19 @@ public final class AiRepository {
         JSONArray messages=new JSONArray();messages.put(new JSONObject().put("role","system").put("content",system(contextEnabled)));
         if(contextEnabled){List<AppStore.Message> history=store.getMessages(10);int used=0;for(int i=0;i<history.size();i++){AppStore.Message m=history.get(i);if(i==history.size()-1&&"user".equals(m.role)&&m.content.equals(userMessage))continue;String content=truncate(m.content,3000);if(used+content.length()>15000)continue;messages.put(new JSONObject().put("role",m.role).put("content",content));used+=content.length();}}
         messages.put(new JSONObject().put("role","user").put("content",userMessage));
-        JSONObject request=new JSONObject().put("model",model.trim()).put("messages",messages).put("max_tokens",768).put("temperature",0.4).put("stream",false);
-        HttpsURLConnection c=(HttpsURLConnection)new URL("https://integrate.api.nvidia.com/v1/chat/completions").openConnection();
-        activeConnection=c;
-        c.setConnectTimeout(20000);c.setReadTimeout(90000);c.setInstanceFollowRedirects(false);c.setRequestMethod("POST");c.setDoOutput(true);c.setRequestProperty("Authorization","Bearer "+key);c.setRequestProperty("Content-Type","application/json; charset=utf-8");c.setRequestProperty("Accept","application/json");
+        NvidiaClient client=new NvidiaClient(key);activeNvidia=client;
         try{
             checkCancelled();
-            byte[] bytes=request.toString().getBytes(StandardCharsets.UTF_8);c.setFixedLengthStreamingMode(bytes.length);try(OutputStream out=c.getOutputStream()){out.write(bytes);}
-            int code=c.getResponseCode();if(code!=200){if(code==401||code==403)throw new IOException("مفتاح NVIDIA غير صالح أو لا يسمح بهذا النموذج");if(code==429)throw new IOException("وصلت إلى حد استخدام NVIDIA. انتظر أو استخدم النموذج المحلي.");if(code==404)throw new IOException("النموذج المختار غير متاح لدى NVIDIA؛ حدّث معرّفه في الإعدادات");throw new IOException("تعذر الاتصال بـ NVIDIA (HTTP "+code+")");}
-            JSONObject response=new JSONObject(readBounded(c.getInputStream(),2*1024*1024));checkCancelled();String text=response.getJSONArray("choices").getJSONObject(0).getJSONObject("message").optString("content","");if(text.trim().isEmpty())throw new IOException("لم يرجع NVIDIA جوابًا نصيًا");return text.trim();
-        }finally{activeConnection=null;c.disconnect();}
+            NvidiaClient.Result result=client.complete(model,store.prefs().getString("nvidia_active_model",""),messages);
+            checkCancelled();
+            android.content.SharedPreferences.Editor settings=store.prefs().edit()
+                .putString("nvidia_model",result.switched?NvidiaClient.AUTO_MODEL:NvidiaClient.normalizeChoice(model))
+                .putString("nvidia_active_model",result.model);
+            if(result.switched)settings.putString("nvidia_model_notice","تم استبدال نموذج NVIDIA السابق لأنه لم يعد متاحًا؛ الاختيار التلقائي يعمل بالمفتاح المحفوظ.");
+            settings.apply();
+            return contextEnabled?result.text:"الاتصال ناجح\nالنموذج: "+result.model+"\n"+result.text;
+        }finally{activeNvidia=null;}
     }
     private static String truncate(String text,int max){return text.length()>max?text.substring(0,max):text;}
     private static String plain(String text){return text.replace("<|","< |").replace("|>","| >");}
-    private static String readBounded(InputStream input,int max) throws IOException {try(InputStream in=input;ByteArrayOutputStream out=new ByteArrayOutputStream()){byte[] b=new byte[8192];int n;while((n=in.read(b))!=-1){if(out.size()+n>max)throw new IOException("جواب الخادم كبير جدًا");out.write(b,0,n);}return out.toString("UTF-8");}}
 }
